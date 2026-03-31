@@ -37,7 +37,7 @@ input:checked + .slider:before {
 }
 
 h1, h2, h3 {
-    color: var(--accent-gold);
+    color: var(--accent);
     font-weight: 700;
 }
 
@@ -214,15 +214,16 @@ input:checked + .slider .icon-container {
 .level-bar {
   flex-grow: 1;
   height: 8px;
-  background: var(--bg);
+  background: rgba(0, 0, 0, 0.2); /* The "empty" track */
   border-radius: 10px;
+  position: relative;
   overflow: hidden;
 }
 
 .fill {
   height: 100%;
-  background: var(--accent); /* Sunlit Clay or Dusty Mauve */
   border-radius: 10px;
+  /* width: 90% etc. defined in index.astro */
 }
 
 /* TIMELINE (Left) */
@@ -332,3 +333,26 @@ section h2 {
   font-family: 'Cinzel', serif; /* If using the D&D font */
   font-size: 1.5rem;
 }
+
+/* --- SOCIAL LINKS STYLING --- */
+.social-links {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 1.3rem;
+  padding: 1.5rem 0; 
+}
+
+.social-links a {
+  color: var(--text);
+  font-size: 1.5rem; 
+  transition: all 0.3s ease;
+  display: flex; 
+}
+
+.social-links a:hover {
+  color: var(--accent);    /* Turns Sunlit Clay/Dusty Mauve */
+  transform: translateY(-2px); /* Subtle lift */
+  filter: drop-shadow(0 0 8px var(--accent)); /* Soft glow effect */
+}
+

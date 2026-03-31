@@ -70,19 +70,40 @@ const content = {
 
       <section id="education">
         <h2 data-key="education">{content.EN.education}</h2>
-        <div class="edu-grid">
-          <div class="edu-item">
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="time-dot"></div>
             <h3 data-key="edu1Title">{content.EN.edu1Title}</h3>
             <p class="meta" data-key="edu1Place">{content.EN.edu1Place}</p>
+            
+            <div class="quest-details">
+              <p>Focused on the foundations of Data Science and Algorithmic Logic. 
+                Mastered the ancient arts of Statistical Analysis and Database Design.</p>
+            </div>
+
+            <div class="loot-tags">
+              <span class="tag">Data Science</span>
+              <span class="tag">Statistics</span>
+              <span class="tag">SQL</span>
+            </div>
           </div>
-          <div class="edu-item secondary-edu">
+
+          <div class="timeline-item">
+            <div class="time-dot"></div>
             <h3 data-key="edu2Title">{content.EN.edu2Title}</h3>
             <p class="meta" data-key="edu2Place">{content.EN.edu2Place}</p>
+            
+            <div class="quest-details">
+              <p>Specialized training in Cloud Infrastructure and Big Data environments.</p>
+            </div>
+
+            <div class="loot-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Cloud Computing</span>
+            </div>
           </div>
-          <div class="edu-item secondary-edu">
-            <h3 data-key="edu3Title">{content.EN.edu3Title}</h3>
-            <p class="meta" data-key="edu3Place">{content.EN.edu3Place}</p>
-          </div>
+
         </div>
       </section>
 
@@ -101,16 +122,41 @@ const content = {
       <section id="experience">
         <h2 data-key="experience">{content.EN.experience}</h2>
         <div class="timeline">
+          
           <div class="timeline-item">
             <div class="time-dot"></div>
             <h3 data-key="job1Title">{content.EN.job1Title}</h3>
             <p class="meta" data-key="job1Place">{content.EN.job1Place}</p>
+            
+            <div class="quest-details">
+              <p>In this role, I tackled the "Chaos of Raw Data." I developed automated 
+                scripts to clean and organize information, ensuring the party had 
+                accurate insights for decision-making.</p>
+            </div>
+
+            <div class="loot-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Automation</span>
+              <span class="tag">ETL</span>
+            </div>
           </div>
+
           <div class="timeline-item">
             <div class="time-dot"></div>
             <h3 data-key="job2Title">{content.EN.job2Title}</h3>
             <p class="meta" data-key="job2Place">{content.EN.job2Place}</p>
+            
+            <div class="quest-details">
+              <p>Managed technical documentation and user support, ensuring all 
+                "adventurers" could navigate the system without getting lost.</p>
+            </div>
+
+            <div class="loot-tags">
+              <span class="tag">Technical Support</span>
+              <span class="tag">Documentation</span>
+            </div>
           </div>
+
         </div>
       </section>
     </div>
@@ -121,8 +167,12 @@ const content = {
            </div>
         
         <div class="social-links">
-          <a href="https://github.com/paloma-guth" target="_blank">GH</a>
-          <a href="https://linkedin.com/in/paloma-guth-kronbauer" target="_blank">LI</a>
+          <a href="https://github.com/paloma-guth" target="_blank" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/paloma-guth-kronbauer-180237301/" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
 
         <div class="skills-section">

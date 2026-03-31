@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+// You can expand this content object with the "Long" versions of your descriptions
+const detailedContent = {
+  EN: {
+    title: "Full Quest Log",
+    back: "← Return to Town (Home)",
+    ganLong: "Deep dive into GANs: I used TensorFlow to build a DCGAN... (Add your 3-4 paragraphs here)",
+    batoceraLong: "The Debian Migration: This involved move 20+ workstations... (Add details here)"
+  },
+  PT: {
+    title: "Diário de Missões Completo",
+    back: "← Voltar para a Vila (Home)",
+    ganLong: "Detalhes do GAN: Utilizei TensorFlow para construir uma DCGAN... (Adicione seus detalhes aqui)",
+    batoceraLong: "Migração Debian: Este projeto envolveu a migração de 20+ estações... (Adicione detalhes aqui)"
+  }
+};
+---
+
+<Layout title="Quest Log | Paloma">
+  <Header />
+  <main class="quest-archive">
+    <a href="/" class="back-link" data-key="back">{detailedContent.EN.back}</a>
+    
+    <h1 data-key="title" class="page-title">{detailedContent.EN.title}</h1>
+
+    <article class="quest-entry">
+      <div class="entry-header">
+        <h2>Graffiti Generator (GANs)</h2>
+        <span class="badge">Completed</span>
+      </div>
+      <p class="long-desc" data-key="ganLong">{detailedContent.EN.ganLong}</p>
+      </article>
+
+    <article class="quest-entry">
+      <div class="entry-header">
+        <h2>Debian to Batocera Integration</h2>
+        <span class="badge">Completed</span>
+      </div>
+      <p class="long-desc" data-key="batoceraLong">{detailedContent.EN.batoceraLong}</p>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .quest-archive {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  .page-title { color: var(--accent); font-size: 3rem; margin: 1rem 0 3rem 0; }
+  .back-link { color: var(--secondary); text-decoration: none; font-size: 0.9rem; }
+  
+  .quest-entry {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .entry-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .badge { background: #1a4d2e; color: #4ade80; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; }
+  .long-desc { line-height: 1.8; color: var(--text); opacity: 0.9; }
+</style>
+
+<script define:vars={{ detailedContent }}>
+  // Copy your language switcher logic here so this page also translates!
+  window.addEventListener('langChange', (e) => {
+    const lang = e.detail;
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (detailedContent[lang][key]) el.innerText = detailedContent[lang][key];
+    });
+  });
+</script>
