@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const content = {
+  EN: {
+    heroTitle: "Paloma Guth Kronbauer",
+    heroSub: "Computer Science & Mathematics @ St. Olaf College",
+    about: "The Archive (About)",
+    bio: "Data Engineer and Backend Developer specialized in Linux environments, Python automation, and optimizing systems for scalability and security.",
+    education: "The Academy (Education)",
+    edu1Title: "B.A. in Computer Science and Mathematics",
+    edu1Place: "St. Olaf College | 2022 - 2026",
+    edu2Title: "Neural Networks & Deep Learning",
+    edu2Place: "DIS Denmark | 2025",
+    edu3Title: "IB Diploma",
+    edu3Place: "UWC Maastricht | 2022",
+    projects: "Active Quests (Projects)",
+    proj1Title: "Graffiti Generator (GANs)",
+    proj1Desc: "Implemented Generative Adversarial Networks and designed image-processing ETL pipelines using TensorFlow.",
+    proj2Title: "Data Pipeline: Stardew Valley",
+    proj2Desc: "Built a robust web scraper for automated extraction and applied probabilistic models to game mechanics.",
+    experience: "Adventure History (Experience)",
+    job1Title: "Technical Lead & Mentor",
+    job1Place: "St. Olaf Tech Hub | 2022 - Present",
+    job2Title: "IT Support Analyst",
+    job2Place: "St. Olaf IT | 2023 - 2024",
+    skills: "Attributes (Skills)",
+    lvl: "Lvl."
+  },
+  PT: {
+    heroTitle: "Paloma Guth Kronbauer",
+    heroSub: "Ciência da Computação e Matemática @ St. Olaf College",
+    about: "O Arquivo (Sobre)",
+    bio: "Engenheira de Dados e Desenvolvedora Backend especializada em ambientes Linux, automação em Python e otimização de sistemas para escalabilidade e segurança.",
+    education: "A Academia (Educação)",
+    edu1Title: "Bacharelado em Ciência da Computação e Matemática",
+    edu1Place: "St. Olaf College | 2022 - 2026",
+    edu2Title: "Redes Neurais e Deep Learning",
+    edu2Place: "DIS Denmark | 2025",
+    edu3Title: "Diploma IB",
+    edu3Place: "UWC Maastricht | 2022",
+    projects: "Missões Ativas (Projetos)",
+    proj1Title: "Gerador de Graffiti (GANs)",
+    proj1Desc: "Implementação de Redes Neurais Generativas (GANs) e pipelines de ETL para processamento de imagens.",
+    proj2Title: "Pipeline de Dados: Stardew Valley",
+    proj2Desc: "Desenvolvimento de web scraper para coleta de dados e aplicação de modelos probabilísticos.",
+    experience: "Histórico de Aventuras (Experiência)",
+    job1Title: "Gestora e Mentora Técnica",
+    job1Place: "Hub de Tecnologia St. Olaf | 2022 - Atual",
+    job2Title: "Analista de Suporte de TI",
+    job2Place: "Suporte de TI St. Olaf | 2023 - 2024",
+    skills: "Atributos (Habilidades)",
+    lvl: "Nível"
+  }
+};
+---
+
+<Layout title="Paloma | Data Paladin">
+  <Header />
+
+  <main class="portfolio-grid">
+    <div class="main-content">
+      <section class="hero-section">
+        <h1 data-key="heroTitle">{content.EN.heroTitle}</h1>
+        <p class="subtitle" data-key="heroSub">{content.EN.heroSub}</p>
+        <div class="divider"></div>
+        <p class="bio-text" data-key="bio">{content.EN.bio}</p>
+      </section>
+
+      <section id="education">
+        <h2 data-key="education">{content.EN.education}</h2>
+        <div class="edu-grid">
+          <div class="edu-item">
+            <h3 data-key="edu1Title">{content.EN.edu1Title}</h3>
+            <p class="meta" data-key="edu1Place">{content.EN.edu1Place}</p>
+          </div>
+          <div class="edu-item secondary-edu">
+            <h3 data-key="edu2Title">{content.EN.edu2Title}</h3>
+            <p class="meta" data-key="edu2Place">{content.EN.edu2Place}</p>
+          </div>
+          <div class="edu-item secondary-edu">
+            <h3 data-key="edu3Title">{content.EN.edu3Title}</h3>
+            <p class="meta" data-key="edu3Place">{content.EN.edu3Place}</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 data-key="projects">{content.EN.projects}</h2>
+        <div class="project-card">
+          <h3 data-key="proj1Title">{content.EN.proj1Title}</h3>
+          <p data-key="proj1Desc">{content.EN.proj1Desc}</p>
+        </div>
+        <div class="project-card">
+          <h3 data-key="proj2Title">{content.EN.proj2Title}</h3>
+          <p data-key="proj2Desc">{content.EN.proj2Desc}</p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2 data-key="experience">{content.EN.experience}</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="time-dot"></div>
+            <h3 data-key="job1Title">{content.EN.job1Title}</h3>
+            <p class="meta" data-key="job1Place">{content.EN.job1Place}</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time-dot"></div>
+            <h3 data-key="job2Title">{content.EN.job2Title}</h3>
+            <p class="meta" data-key="job2Place">{content.EN.job2Place}</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="photo-placeholder">
+           </div>
+        
+        <div class="social-links">
+          <a href="https://github.com/paloma-guth" target="_blank">GH</a>
+          <a href="https://linkedin.com/in/paloma-guth-kronbauer" target="_blank">LI</a>
+        </div>
+
+        <div class="skills-section">
+          <h3 data-key="skills">{content.EN.skills}</h3>
+          
+          <div class="skill-item">
+            <span>Python</span>
+            <div class="level-bar"><div class="fill" style="width: 95%;"></div></div>
+            <span><span data-key="lvl">{content.EN.lvl}</span> 5</span>
+          </div>
+
+          <div class="skill-item">
+            <span>SQL</span>
+            <div class="level-bar"><div class="fill" style="width: 80%;"></div></div>
+            <span><span data-key="lvl">{content.EN.lvl}</span> 4</span>
+          </div>
+
+          <div class="skill-item">
+            <span>Linux</span>
+            <div class="level-bar"><div class="fill" style="width: 90%;"></div></div>
+            <span><span data-key="lvl">{content.EN.lvl}</span> 5</span>
+          </div>
+
+          <div class="skill-item">
+            <span>Docker/AWS</span>
+            <div class="level-bar"><div class="fill" style="width: 65%;"></div></div>
+            <span><span data-key="lvl">{content.EN.lvl}</span> 3</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+</Layout>
+
+<script define:vars={{ content }}>
+  window.addEventListener('langChange', (e) => {
+    const selectedLang = e.detail;
+    const translations = content[selectedLang];
+    document.querySelectorAll('[data-key]').forEach((el) => {
+      const key = el.getAttribute('data-key');
+      if (translations[key]) el.innerText = translations[key];
+    });
+  });
+</script>
+
+<style>
+  main { 
+    max-width: 1100px; /* Increased from 800px */
+    margin: 4rem auto; 
+    padding: 0 1.5rem; /* Reduced padding */
+  }
+  
+  h1 { 
+    font-size: 3.5rem; /* Made slightly larger to fit the wider space */
+    color: var(--accent); 
+    margin-bottom: 1rem; 
+    letter-spacing: -1px;
+  }
+  p {
+    font-size: 1.2rem;
+    color: var(--text);
+    opacity: 0.9;
+  }
+</style>

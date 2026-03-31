@@ -1,0 +1,334 @@
+/* src/styles/global.css */
+
+:root {
+  /* DARK THEME (Forest/Nature) */
+  --bg: #283618;          /* Black Forest */
+  --card: #606c38;        /* Olive Leaf */
+  --text: #fefae0;        /* Cornsilk */
+  --accent: #dda15e;      /* Sunlit Clay */
+  --secondary: #bc6c25;   /* Copperwood */
+  --border: #606c38;
+}
+
+/* LIGHT THEME (Lavender/Dusty Mauve) */
+:root:not(.dark) {
+  --bg: #f5e6e8;          /* Lavender Blush */
+  --card: #d5c6e0;        /* Thistle */
+  --text: #192a51;        /* Space Indigo */
+  --accent: #967aa1;      /* Dusty Mauve */
+  --secondary: #aaa1c8;   /* Lilac Ash */
+  --border: #aaa1c8;
+}
+
+/* Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Ensure the slider actually moves the circle */
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--accent);
+}
+
+h1, h2, h3 {
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent-crimson);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--accent-gold);
+}
+/* --- ICON SLIDER CSS --- */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--card);
+  border: 1px solid var(--text);
+  transition: .4s;
+  border-radius: 34px;
+  overflow: hidden; /* Keeps icons inside the rounded corners */
+}
+
+/* The Sliding Knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  z-index: 2; /* Sits on top of icons */
+}
+
+input:checked + .slider {
+  background-color: var(--secondary);
+}
+
+input:checked + .slider:before {
+  background-color: var(--text); /* The sliding knob matches the text color */
+}
+
+/* Icon Styling inside the slider */
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 6px;
+  color: var(--text);
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  z-index: 1;
+}
+
+/* Dark mode icon adjustments */
+input:checked + .slider .icon-container {
+  color: #fff;
+}
+
+.lang-btn, .cv-btn {
+  /* Keep your existing button styles here */
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Language Switcher Styling */
+.lang-switcher {
+  display: flex;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.lang-option {
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 4px 12px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.lang-option.active {
+  background: var(--accent);
+  color: white;
+  opacity: 1;
+}
+
+.cv-btn {
+  background: var(--secondary);
+  color: var(--text) !important;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Left side is twice as wide as right */
+  gap: 3rem;
+  max-width: 1300px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+/* SIDEBAR (Right) */
+.sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.profile-card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background: var(--bg);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  border: 2px solid var(--accent);
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.level-bar {
+  flex-grow: 1;
+  height: 8px;
+  background: var(--bg);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--accent); /* Sunlit Clay or Dusty Mauve */
+  border-radius: 10px;
+}
+
+/* TIMELINE (Left) */
+.timeline {
+  border-left: 2px solid var(--accent);
+  padding-left: 20px;
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.time-dot {
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Responsive: Stack columns on mobile */
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    order: -1; /* Photo goes to top on mobile */
+  }
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.2rem;
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.timeline-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.timeline-item .meta {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+#education {
+  margin-bottom: 3rem;
+}
+
+.edu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.edu-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.edu-item .meta {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.secondary-edu {
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+  opacity: 0.8;
+}
+
+/* Make sure headers have some breathing room */
+section h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Cinzel', serif; /* If using the D&D font */
+  font-size: 1.5rem;
+}
