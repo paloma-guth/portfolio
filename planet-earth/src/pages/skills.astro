@@ -5,21 +5,49 @@ import { content } from '../components/languages';
 import '../styles/skillsBook.css';
 
 const t = content.EN;
+
+// 1. Soft Skills (Cantrips) - Consolidated into one card
 const cantrips = [
   { name: "Technical Communication" },
   { name: "Problem Solving" },
-  { name: "Systemic Thinking" }
+  { name: "Systemic Thinking" },
+  { name: "Adaptability" }
 ];
 
 const technicalSkills = [
-  { name: "Python", lvl: 9 },
-  { name: "FastAPI", lvl: 9 },
-  { name: "SQL", lvl: 8 },
-  { name: "PostgreSQL", lvl: 8 },
-  { name: "Linux/Bash", lvl: 8 },
-  { name: "C / C++", lvl: 7 },
-  { name: "Docker", lvl: 6 },
-  { name: "AWS", lvl: 5 },
+  // ... your existing levels 1 - 7 ...
+  { name: "Javascript", lvl: 1 },
+  { name: "Typescript", lvl: 2 },
+  { name: "Docker Basics", lvl: 2 },
+  { name: "AWS Fundamentals", lvl: 2 },
+  { name: "Azure", lvl: 2 },
+  { name: "Power BI", lvl: 3 },
+  { name: "Kubernetes", lvl: 3 },
+  { name: "Linux", lvl: 4 },
+  { name: "Tensorflow", lvl: 4 },
+  { name: "Scikit-learn", lvl: 5 },
+  { name: "ETL", lvl: 5 },
+  { name: "Bash", lvl: 6 },
+  { name: "Git/GitHub", lvl: 6 },
+  { name: "SQL & Databases", lvl: 6 },
+  { name: "C++ / C", lvl: 7 },
+  { name: "Python (Backend/Data)", lvl: 7 },
+  { name: "Numpy & Pandas", lvl: 7 },
+
+  // LEVEL 8: THE SECURE DATA TIER
+  { name: "Distributed Systems", lvl: 8 },
+  { name: "Data Privacy & LGPD Compliance", lvl: 8 }, // Very important in Brazil!
+  { name: "Network Security (SSL/TLS)", lvl: 8 },
+
+  // LEVEL 9: THE INFRASTRUCTURE TIER
+  { name: "Cloud Security Architecture", lvl: 9 },
+  { name: "Infrastructure as Code", lvl: 9 },
+  { name: "Threat Intelligence Pipelines", lvl: 9 },
+
+  // LEVEL 10: THE SYSTEM MASTER TIER
+  { name: "Secure System Optimization", lvl: 10 },
+  { name: "Low-Level Vulnerability Research", lvl: 10 },
+  { name: "High-Performance Data Encryption", lvl: 10 }
 ];
 
 // Logic to group skills by level
@@ -29,8 +57,8 @@ const groupedSkills = technicalSkills.reduce((acc, skill) => {
   return acc;
 }, {});
 
-// Sort levels descending (10 down to 1)
-const sortedLevels = Object.keys(groupedSkills).sort((a, b) => b - a);
+// Sort levels ASCENDING (1 to 10)
+const sortedLevels = Object.keys(groupedSkills).sort((a, b) => Number(a) - Number(b));
 ---
 
 <Layout title="Skills | Paloma Guth">
@@ -59,17 +87,27 @@ const sortedLevels = Object.keys(groupedSkills).sort((a, b) => b - a);
     <div class="divider"></div>
 
     <section class="skills-grid">
-      {sortedLevels.map((lvl) => (
-        <article class="skill-card lvl-group">
-          <div class="lvl-badge"><span>{lvl}</span></div>
-          <h3 class="lvl-title">Level {lvl} Masteries</h3>
-          <ul class="mastery-list">
-            {groupedSkills[lvl].map(skillName => (
-              <li>{skillName}</li>
-            ))}
-          </ul>
-        </article>
-      ))}
+      {sortedLevels.map((lvl) => {
+        const isLocked = Number(lvl) >= 8;
+        return (
+          <article class={`skill-card lvl-group ${isLocked ? 'locked' : ''}`}>
+            <div class="lvl-badge">
+              <span>{lvl}</span>
+              {isLocked && <i class="fa-solid fa-lock lock-icon"></i>}
+            </div>
+            
+            <h3 class="lvl-title">
+              {isLocked ? "Future Quest..." : `Level ${lvl} Masteries`}
+            </h3>
+            
+            <ul class="mastery-list">
+              {groupedSkills[lvl].map(skillName => (
+                <li>{skillName}</li>
+              ))}
+            </ul>
+          </article>
+        );
+      })}
     </section>
   </main>
 </Layout>
