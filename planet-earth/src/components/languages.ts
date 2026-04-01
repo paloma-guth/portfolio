@@ -11,7 +11,33 @@ export const content = {
     edu2Title: "Neural Networks & Deep Learning",
     edu2Place: "DIS Denmark | 2025",
     eduIB: "International Baccalaureate (IB) Diploma",
-    projects: "Active Quests",
+    
+    // St. Olaf
+    stOlafTitle: "St. Olaf College",
+    stOlafPlace: "Northfield, MN | 2022 - 2026",
+    tagProb: "Probability & Statistics",
+    tagML: "Machine Learning",
+    tagForest: "Ensemble Methods",
+    tagWrangling: "Data Wrangling",
+    tagTheory: "Theory of Computation",
+    tagSoftware: "Software Engineering",
+
+    // DIS Denmark
+    disTitle: "DIS Denmark",
+    disPlace: "Copenhagen | Study Abroad",
+    tagDeep: "Deep Learning",
+    tagBigData: "Big Data Infra",
+    tagAI: "Artificial Intelligence",
+    tagGameTheory: "Game Theory",
+    tagCollab: "Cloud Collaboration",
+
+    // IB
+    ibTitle: "International Baccalaureate (IB)",
+    ibPlace: "UWC Maastricht | 2020 - 2022",
+    tagResearch: "Academic Research",
+    tagIndep: "Independent Study",
+    tagInter: "Intercultural Communication",
+
     activeQuests: "Active Quests",
     experience: "Adventure History",
     job1Title: "Technical Lead & Mentor",
@@ -50,6 +76,33 @@ export const content = {
     edu2Title: "Redes Neurais e Deep Learning",
     edu2Place: "DIS Denmark | 2025",
     eduIB: "Diploma de Bacharelado Internacional (IB)",
+
+    // St. Olaf
+    stOlafTitle: "St. Olaf College",
+    stOlafPlace: "Northfield, MN | 2022 - 2026",
+    tagProb: "Probabilidade e Estatística",
+    tagML: "Machine Learning",
+    tagForest: "Métodos Ensemble",
+    tagWrangling: "Tratamento de Dados",
+    tagTheory: "Teoria da Computação",
+    tagSoftware: "Eng. de Software",
+
+    // DIS Denmark
+    disTitle: "DIS Denmark",
+    disPlace: "Copenhague | Intercâmbio",
+    tagDeep: "Deep Learning",
+    tagBigData: "Infra de Big Data",
+    tagAI: "Inteligência Artificial",
+    tagGameTheory: "Teoria dos Jogos",
+    tagCollab: "Colaboração em Nuvem",
+
+    // IB
+    ibTitle: "International Baccalaureate (IB)",
+    ibPlace: "UWC Maastricht | 2020 - 2022",
+    tagResearch: "Pesquisa Acadêmica",
+    tagIndep: "Estudo Independente",
+    tagInter: "Comunicação Intercultural",
+
     projects: "Missões Ativas",
     activeQuests: "Missões Ativas",
     experience: "Histórico de Aventuras",
