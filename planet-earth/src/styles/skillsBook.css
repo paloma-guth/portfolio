@@ -1,0 +1,117 @@
+.skills-page {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+/* TOP ROW */
+.intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Card smaller than Quote */
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.cantrip-main {
+  background: var(--card);
+  border: 2px dashed var(--accent); /* Dashed to show "Natural" skills */
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.cantrip-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.cantrip-list li {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: var(--accent);
+}
+
+.flavor-text {
+  padding-left: 2rem;
+}
+
+blockquote {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+/* THE SKILLS GRID (3 Columns) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.skill-card.lvl-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  position: relative;
+  min-height: 150px;
+}
+
+.lvl-badge {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 50px;
+  height: 50px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.lvl-badge span::before {
+  content: 'L';
+  font-size: 0.7rem;
+}
+
+.lvl-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.mastery-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mastery-list li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4rem 0;
+  opacity: 0.3;
+}
+
+@media (max-width: 900px) {
+  .intro-row, .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

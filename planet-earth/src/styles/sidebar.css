@@ -1,0 +1,148 @@
+/* --- SIDEBAR LAYOUT & CARDS --- */
+.sidebar {
+  padding: 0.5rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 80px;
+  align-self: start; /* Keeps it from stretching the full page length */
+}
+
+.profile-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background: var(--bg);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  border: 2px solid var(--accent);
+}
+
+.character-name { font-size: 1.4rem; margin-bottom: 2px; text-align: center; }
+.character-class { font-size: 0.85rem; color: var(--accent); text-align: center; font-weight: bold; margin-bottom: 1rem; }
+
+/* --- ATTRIBUTES & STATS --- */
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.stats-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.stat-value { color: var(--accent); font-weight: bold; }
+
+/* --- SPELLS & SKILLS (ORB SYSTEM) --- */
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.spell-levels {
+  display: flex;
+  gap: 4px;
+}
+
+.orb {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.orb.filled {
+  background: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+.spellbook-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px;
+  font-size: 0.7rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.spellbook-btn:hover {
+  background: rgba(221, 161, 94, 0.1);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* --- LANGUAGES (KNOWN TONGUES) --- */
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.lang-badge {
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.lang-badge.native { background: rgba(221, 161, 94, 0.05); border-width: 1.7px; }
+.lang-badge.fluent { background: rgba(221, 161, 94, 0.05); border-width: 1.58px; }
+.lang-badge.inter { opacity: 0.9; border-width: 0.9px; }
+.lang-badge.basic { opacity: 0.9; border-style: dashed; border-width: 0.8px; }
+
+/* --- SOCIAL LINKS --- */
+.social-links {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 1.3rem;
+  padding: 0.8rem 0; 
+}
+
+.social-links a {
+  color: var(--text);
+  font-size: 1.5rem; 
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px var(--accent));
+}

@@ -30,12 +30,6 @@ html, body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Ensure the slider actually moves the circle */
-input:checked + .slider:before {
-  transform: translateX(26px);
-  background-color: var(--accent);
-}
-
 h1, h2, h3 {
     color: var(--accent);
     font-weight: 700;
@@ -50,6 +44,7 @@ a {
 a:hover {
     color: var(--accent-gold);
 }
+
 /* --- ICON SLIDER CSS --- */
 .nav-controls {
   display: flex;
@@ -100,7 +95,8 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  background-color: var(--text); /* The sliding knob matches the text color */
+  transform: translateX(26px); /* Moves the white circle to the right */
+  background-color: var(--bg);  /* Makes the circle pop against the new background */
 }
 
 /* Icon Styling inside the slider */
@@ -177,53 +173,6 @@ input:checked + .slider .icon-container {
   max-width: 1300px;
   margin: 4rem auto;
   padding: 0 2rem;
-}
-
-/* SIDEBAR (Right) */
-.sidebar {
-  position: sticky;
-  top: 100px;
-  height: fit-content;
-}
-
-.profile-card {
-  background: var(--card);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  text-align: center;
-}
-
-.photo-placeholder {
-  width: 150px;
-  height: 150px;
-  background: var(--bg);
-  border-radius: 50%;
-  margin: 0 auto 1.5rem;
-  border: 2px solid var(--accent);
-}
-
-.skill-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 1rem;
-  font-size: 0.8rem;
-}
-
-.level-bar {
-  flex-grow: 1;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.2); /* The "empty" track */
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.fill {
-  height: 100%;
-  border-radius: 10px;
-  /* width: 90% etc. defined in index.astro */
 }
 
 /* TIMELINE (Left) */
@@ -325,7 +274,6 @@ input:checked + .slider .icon-container {
   opacity: 0.8;
 }
 
-/* Make sure headers have some breathing room */
 section h2 {
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
@@ -334,25 +282,4 @@ section h2 {
   font-size: 1.5rem;
 }
 
-/* --- SOCIAL LINKS STYLING --- */
-.social-links {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  gap: 1.3rem;
-  padding: 1.5rem 0; 
-}
-
-.social-links a {
-  color: var(--text);
-  font-size: 1.5rem; 
-  transition: all 0.3s ease;
-  display: flex; 
-}
-
-.social-links a:hover {
-  color: var(--accent);    /* Turns Sunlit Clay/Dusty Mauve */
-  transform: translateY(-2px); /* Subtle lift */
-  filter: drop-shadow(0 0 8px var(--accent)); /* Soft glow effect */
-}
 

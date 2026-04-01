@@ -1,59 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-
-const content = {
-  EN: {
-    heroTitle: "Paloma Guth Kronbauer",
-    heroSub: "Computer Science & Mathematics @ St. Olaf College",
-    about: "The Archive (About)",
-    bio: "Data Engineer and Backend Developer specialized in Linux environments, Python automation, and optimizing systems for scalability and security.",
-    education: "The Academy (Education)",
-    edu1Title: "B.A. in Computer Science and Mathematics",
-    edu1Place: "St. Olaf College | 2022 - 2026",
-    edu2Title: "Neural Networks & Deep Learning",
-    edu2Place: "DIS Denmark | 2025",
-    edu3Title: "IB Diploma",
-    edu3Place: "UWC Maastricht | 2022",
-    projects: "Active Quests (Projects)",
-    proj1Title: "Graffiti Generator (GANs)",
-    proj1Desc: "Implemented Generative Adversarial Networks and designed image-processing ETL pipelines using TensorFlow.",
-    proj2Title: "Data Pipeline: Stardew Valley",
-    proj2Desc: "Built a robust web scraper for automated extraction and applied probabilistic models to game mechanics.",
-    experience: "Adventure History (Experience)",
-    job1Title: "Technical Lead & Mentor",
-    job1Place: "St. Olaf Tech Hub | 2022 - Present",
-    job2Title: "IT Support Analyst",
-    job2Place: "St. Olaf IT | 2023 - 2024",
-    skills: "Attributes (Skills)",
-    lvl: "Lvl."
-  },
-  PT: {
-    heroTitle: "Paloma Guth Kronbauer",
-    heroSub: "Ciência da Computação e Matemática @ St. Olaf College",
-    about: "O Arquivo (Sobre)",
-    bio: "Engenheira de Dados e Desenvolvedora Backend especializada em ambientes Linux, automação em Python e otimização de sistemas para escalabilidade e segurança.",
-    education: "A Academia (Educação)",
-    edu1Title: "Bacharelado em Ciência da Computação e Matemática",
-    edu1Place: "St. Olaf College | 2022 - 2026",
-    edu2Title: "Redes Neurais e Deep Learning",
-    edu2Place: "DIS Denmark | 2025",
-    edu3Title: "Diploma IB",
-    edu3Place: "UWC Maastricht | 2022",
-    projects: "Missões Ativas (Projetos)",
-    proj1Title: "Gerador de Graffiti (GANs)",
-    proj1Desc: "Implementação de Redes Neurais Generativas (GANs) e pipelines de ETL para processamento de imagens.",
-    proj2Title: "Pipeline de Dados: Stardew Valley",
-    proj2Desc: "Desenvolvimento de web scraper para coleta de dados e aplicação de modelos probabilísticos.",
-    experience: "Histórico de Aventuras (Experiência)",
-    job1Title: "Gestora e Mentora Técnica",
-    job1Place: "Hub de Tecnologia St. Olaf | 2022 - Atual",
-    job2Title: "Analista de Suporte de TI",
-    job2Place: "Suporte de TI St. Olaf | 2023 - 2024",
-    skills: "Atributos (Habilidades)",
-    lvl: "Nível"
-  }
-};
+import Sidebar from '/workspaces/portfolio/planet-earth/src/pages/Siderbar.astro';
+import '../styles/sidebar.css';
+import { content } from '../components/languages';
+const t = content.EN;
 ---
 
 <Layout title="Paloma | Data Paladin">
@@ -71,7 +22,7 @@ const content = {
       <section id="education">
         <h2 data-key="education">{content.EN.education}</h2>
         <div class="timeline">
-          
+
           <div class="timeline-item">
             <div class="time-dot"></div>
             <h3 data-key="edu1Title">{content.EN.edu1Title}</h3>
@@ -104,18 +55,56 @@ const content = {
             </div>
           </div>
 
+          <div class="timeline-item">
+            <div class="time-dot"></div>
+            <h3 data-key="eduIB">International Baccalaureate (IB) Diploma</h3>
+            <p class="meta">UWC Maastricht | 2020-2022</p>
+            
+            <div class="quest-details">
+              <p>Rigorous pre-university program focusing on holistic education, research (Extended Essay), and global citizenship.</p>
+            </div>
+
+            <div class="loot-tags">
+              <span class="tag">Bilingual</span>
+              <span class="tag">Critical Thinking</span>
+              <span class="tag">Research</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      <section id="projects">
-        <h2 data-key="projects">{content.EN.projects}</h2>
-        <div class="project-card">
-          <h3 data-key="proj1Title">{content.EN.proj1Title}</h3>
-          <p data-key="proj1Desc">{content.EN.proj1Desc}</p>
+      <section id="active-quests">
+        <h2 data-key="activeQuests">Active Quests</h2>
+        
+        <div class="quest-list">
+          <div class="quest-card active">
+            <div class="pulse-indicator"></div> 
+            <h3 data-key="stardewTitle">Data Pipeline: Stardew Valley</h3>
+            <p>Building a web scraper for game mechanics and crop ROI. Turning farm data into gold.</p>
+            
+            <div class="loot-tags">
+              <span class="tag">Python</span>
+              <span class="tag">BeautifulSoup</span>
+            </div>
+          </div>
+
+          <div class="quest-card active">
+            <div class="pulse-indicator"></div>
+            <h3 data-key="sqlTitle">SQL Sorcery: Database Optimization</h3>
+            <p>Refactoring complex queries and schema design for high-performance data retrieval.</p>
+            
+            <div class="loot-tags">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Query Tuning</span>
+            </div>
+          </div>
         </div>
-        <div class="project-card">
-          <h3 data-key="proj2Title">{content.EN.proj2Title}</h3>
-          <p data-key="proj2Desc">{content.EN.proj2Desc}</p>
+
+        <div class="quest-footer">
+          <a href="/quests" class="quest-log-btn">
+            <i class="fa-solid fa-book-journal-whills"></i> See Quest Log
+          </a>
         </div>
       </section>
 
@@ -159,51 +148,46 @@ const content = {
 
         </div>
       </section>
+
+      <section id="inventory">
+        <h2 data-key="inventory">Inventory & Achievements</h2>
+        
+        <div class="badge-grid">
+          <div class="badge-item">
+            <div class="badge-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="badge-info">
+              <span class="badge-name">Pre-Security</span>
+              <span class="badge-source">TryHackMe</span>
+            </div>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-icon">
+              <i class="fa-solid fa-scroll"></i>
+            </div>
+            <div class="badge-info">
+              <span class="badge-name">Python for Data</span>
+              <span class="badge-source">Google Cert.</span>
+            </div>
+          </div>
+
+          <div class="badge-item">
+            <div class="badge-icon">
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+            <div class="badge-info">
+              <span class="badge-name">Linux Basics</span>
+              <span class="badge-source">Skill Unlocked</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <aside class="sidebar">
-      <div class="profile-card">
-        <div class="photo-placeholder">
-           </div>
-        
-        <div class="social-links">
-          <a href="https://github.com/paloma-guth" target="_blank" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/paloma-guth-kronbauer-180237301/" target="_blank" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </div>
-
-        <div class="skills-section">
-          <h3 data-key="skills">{content.EN.skills}</h3>
-          
-          <div class="skill-item">
-            <span>Python</span>
-            <div class="level-bar"><div class="fill" style="width: 95%;"></div></div>
-            <span><span data-key="lvl">{content.EN.lvl}</span> 5</span>
-          </div>
-
-          <div class="skill-item">
-            <span>SQL</span>
-            <div class="level-bar"><div class="fill" style="width: 80%;"></div></div>
-            <span><span data-key="lvl">{content.EN.lvl}</span> 4</span>
-          </div>
-
-          <div class="skill-item">
-            <span>Linux</span>
-            <div class="level-bar"><div class="fill" style="width: 90%;"></div></div>
-            <span><span data-key="lvl">{content.EN.lvl}</span> 5</span>
-          </div>
-
-          <div class="skill-item">
-            <span>Docker/AWS</span>
-            <div class="level-bar"><div class="fill" style="width: 65%;"></div></div>
-            <span><span data-key="lvl">{content.EN.lvl}</span> 3</span>
-          </div>
-        </div>
-      </div>
-    </aside>
+    <Sidebar content={content} lang="EN" />
+    
   </main>
 </Layout>
 

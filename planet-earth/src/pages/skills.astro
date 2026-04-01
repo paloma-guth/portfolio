@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { content } from '../components/languages';
+import '../styles/skillsBook.css';
+
+const t = content.EN;
+const cantrips = [
+  { name: "Technical Communication" },
+  { name: "Problem Solving" },
+  { name: "Systemic Thinking" }
+];
+
+const technicalSkills = [
+  { name: "Python", lvl: 9 },
+  { name: "FastAPI", lvl: 9 },
+  { name: "SQL", lvl: 8 },
+  { name: "PostgreSQL", lvl: 8 },
+  { name: "Linux/Bash", lvl: 8 },
+  { name: "C / C++", lvl: 7 },
+  { name: "Docker", lvl: 6 },
+  { name: "AWS", lvl: 5 },
+];
+
+// Logic to group skills by level
+const groupedSkills = technicalSkills.reduce((acc, skill) => {
+  if (!acc[skill.lvl]) acc[skill.lvl] = [];
+  acc[skill.lvl].push(skill.name);
+  return acc;
+}, {});
+
+// Sort levels descending (10 down to 1)
+const sortedLevels = Object.keys(groupedSkills).sort((a, b) => b - a);
+---
+
+<Layout title="Skills | Paloma Guth">
+  <Header />
+
+  <main class="skills-page">
+    <header class="skills-header">
+      <h1 data-key="spellbookTitle">{t.spellbookTitle}</h1>
+      <p class="disclaimer" data-key="levelDisclaimer">{t.levelDisclaimer}</p>
+    </header>
+
+    <section class="intro-row">
+      <article class="skill-card cantrip-main">
+        <h2 class="section-label" data-key="cantripTitle">{t.cantripTitle}</h2>
+        <ul class="cantrip-list">
+          {cantrips.map(c => <li>{c.name}</li>)}
+        </ul>
+      </article>
+
+      <div class="flavor-text">
+        <blockquote data-key="flavorQuote">{t.flavorQuote}</blockquote>
+        <cite data-key="flavorAuthor">{t.flavorAuthor}</cite>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="skills-grid">
+      {sortedLevels.map((lvl) => (
+        <article class="skill-card lvl-group">
+          <div class="lvl-badge"><span>{lvl}</span></div>
+          <h3 class="lvl-title">Level {lvl} Masteries</h3>
+          <ul class="mastery-list">
+            {groupedSkills[lvl].map(skillName => (
+              <li>{skillName}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </section>
+  </main>
+</Layout>

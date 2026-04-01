@@ -49,33 +49,6 @@
   pointer-events: none;
 }
 
-/* --- ACTIVE QUEST BLINKING DOT --- */
-
-@keyframes sonar-pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(221, 161, 94, 0.7); /* Using your Sunlit Clay color */
-  }
-  70% {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 10px rgba(221, 161, 94, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(221, 161, 94, 0);
-  }
-}
-
-.pulse-indicator {
-  background-color: var(--accent) !important;
-  border: 2px solid #fff; /* White rim makes it "pop" against the green/lavender */
-  animation: sonar-pulse 2s infinite ease-in-out;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  display: block;
-}
-
 /* --- QUEST LORE & LOOT STYLES --- */
 
 .quest-details {
@@ -115,6 +88,144 @@
 
 .timeline-item:hover .loot-tags {
   opacity: 1;
+}
+
+/* --- QUEST LIST CONTAINER --- */
+.quest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Increased space between each quest */
+  margin-bottom: 2rem;
+  max-width: 600px; /* Limits the width so cards aren't stretched too wide */
+}
+
+/* --- QUEST CARD LIFT --- */
+.quest-card.active {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  /* Smooth transition for the hop */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.quest-card.active:hover {
+  /* This is the "Hop Up" effect */
+  transform: translateY(-5px); 
+  border-color: var(--accent);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjusting internal text for the smaller card */
+.quest-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem; /* Slightly smaller header */
+}
+
+.quest-card p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem; /* Slightly tighter text */
+  line-height: 1.4;
+}
+
+/* --- LEFT-ALIGNED OUTLINED BUTTON --- */
+.quest-footer {
+  display: flex;
+  justify-content: flex-start; /* Aligns button to the left */
+  margin-top: 1.5rem;
+}
+
+.quest-log-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  /* Outlined Style */
+  background: transparent; 
+  color: var(--accent) !important;
+  border: 2px solid var(--card);
+  border-radius: 4px; /* More "Log Book" feel than a pill shape */
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.quest-log-btn:hover {
+  box-shadow: 0 0 2px var(--accent);
+  transform: translateY(-1.5px);
+}
+
+/* --- THE ACCENT BLINKING DOT --- */
+.pulse-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 161, 94, 0.7); }
+  70% { transform: scale(1.3); box-shadow: 0 0 0 10px rgba(221, 161, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 161, 94, 0); }
+}
+
+/* --- INVENTORY BADGE GRID --- */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(221, 161, 94, 0.05); /* Very light accent tint */
+  border: 1px solid var(--border);
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.badge-item:hover {
+  border-color: var(--accent);
+  background: rgba(221, 161, 94, 0.1);
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+  color: var(--accent);
+  filter: drop-shadow(0 0 5px rgba(221, 161, 94, 0.3));
+}
+
+.badge-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.badge-source {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  text-transform: uppercase;
 }
 
 
