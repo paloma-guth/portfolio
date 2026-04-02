@@ -26,23 +26,56 @@ html, body {
   padding: 0;
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  /* Added a more robust font stack */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
-    color: var(--accent);
-    font-weight: 700;
+  /* Use Cinzel for headers if you have it imported, otherwise serif looks more "RPG" */
+  font-family: 'Cinzel', serif; 
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
+/* If you don't want Cinzel for everything, keep h3 as Inter for clarity */
+h3 {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Fixes for broken variables in your current file */
 a {
-    color: var(--accent-crimson);
+    color: var(--accent); /* Changed from crimson */
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.3s ease;
+    border-bottom: 1px solid transparent;
 }
 
 a:hover {
-    color: var(--accent-gold);
+    color: var(--secondary); /* Changed from gold */
+}
+
+/* Base Paragraph refinement */
+p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    color: var(--text);
+}
+
+body, p {
+  font-family: 'Lora', serif;
+  line-height: 1.8; /* Serifs need more breathing room */
+}
+
+/* Update your Google Font link in Layout.astro to include Montserrat */
+body, p, span, .tag {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.3px; /* Makes it feel "premium" */
 }
 
 /* --- ICON SLIDER CSS --- */
@@ -168,11 +201,15 @@ input:checked + .slider .icon-container {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Left side is twice as wide as right */
-  gap: 3rem;
-  max-width: 1300px;
+  /* Reduced max-width from 1300px to 1050px for better readability */
+  max-width: 1050px; 
+  /* This creates the "larger side margins" */
   margin: 4rem auto;
   padding: 0 2rem;
+  
+  /* Adjusted ratio: Main content is slightly less dominant, sidebar is stable */
+  grid-template-columns: 1.8fr 1fr; 
+  gap: 4rem; /* Increased gap to prevent crowding */
 }
 
 /* TIMELINE (Left) */
@@ -207,10 +244,23 @@ input:checked + .slider .icon-container {
   }
 }
 
+.hero-section {
+  margin-bottom: 4rem;
+}
+
 .hero-section h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0.2rem;
-  color: var(--accent);
+  font-size: 3.2rem; /* Slightly smaller to fit the narrower grid */
+  margin-bottom: 0.5rem;
+}
+
+section h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-top: 3rem; /* Adds space between major sections */
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .subtitle {

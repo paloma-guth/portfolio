@@ -70,74 +70,95 @@ const t = content.EN;
       </section>
 
       <section id="active-quests">
-        <h2 data-key="activeQuests">Active Quests</h2>
+        <h2 data-key="activeQuests">{t.activeQuests}</h2>
         
         <div class="quest-list">
-          <div class="quest-card active">
-            <div class="pulse-indicator"></div> 
-            <h3 data-key="stardewTitle">Data Pipeline: Stardew Valley</h3>
-            <p>Building a web scraper for game mechanics and crop ROI. Turning farm data into gold.</p>
-            
-            <div class="loot-tags">
-              <span class="tag">Python</span>
-              <span class="tag">BeautifulSoup</span>
-            </div>
-          </div>
-
-          <div class="quest-card active">
-            <div class="pulse-indicator"></div>
-            <h3 data-key="sqlTitle">SQL Sorcery: Database Optimization</h3>
-            <p>Refactoring complex queries and schema design for high-performance data retrieval.</p>
-            
-            <div class="loot-tags">
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Query Tuning</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="quest-footer">
-          <a href="/quests" class="quest-log-btn">
-            <i class="fa-solid fa-book-journal-whills"></i> See Quest Log
+          <a href="https://github.com/paloma-guth/stardew-pipeline" target="_blank" class="quest-card-link">
+            <article class="quest-card active">
+              <div class="pulse-indicator"></div> 
+              <h3 data-key="stardewTitle">{t.stardewTitle}</h3>
+              <p data-key="stardewDesc">{t.stardewDesc}</p>
+              
+              <div class="loot-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Scrapy</span>
+                <span class="tag" data-key="tagWrangling">{t.tagWrangling}</span>
+              </div>
+            </article>
           </a>
+
+          <a href="https://github.com/paloma-guth/sql-sorcery" target="_blank" class="quest-card-link">
+            <article class="quest-card active">
+              <div class="pulse-indicator"></div>
+              <h3 data-key="sqlTitle">{t.sqlTitle}</h3>
+              <p data-key="sqlDesc">{t.sqlDesc}</p>
+              
+              <div class="loot-tags">
+                <span class="tag">PostgreSQL</span>
+                <span class="tag" data-key="tagPipe">{t.tagPipe}</span>
+                <span class="tag" data-key="tagSoftware">{t.tagSoftware}</span>
+              </div>
+            </article>
+          </a>
+
+          <div class="quest-footer">
+            <a href="/quests" class="quest-log-btn">
+              <i class="fa-solid fa-book-journal-whills"></i> 
+              <span data-key="seeQuestLog">{t.seeQuestLog}</span>
+            </a>
+          </div>
         </div>
       </section>
 
       <section id="experience">
-        <h2 data-key="experience">{content.EN.experience}</h2>
+        <h2 data-key="experience">{t.experience}</h2>
         <div class="timeline">
-          
+
           <div class="timeline-item">
             <div class="time-dot"></div>
-            <h3 data-key="job1Title">{content.EN.job1Title}</h3>
-            <p class="meta" data-key="job1Place">{content.EN.job1Place}</p>
+            <h3 data-key="job1Title">{t.job1Title}</h3>
+            <p class="meta" data-key="job1Place">{t.job1Place}</p>
             
             <div class="quest-details">
-              <p>In this role, I tackled the "Chaos of Raw Data." I developed automated 
-                scripts to clean and organize information, ensuring the party had 
-                accurate insights for decision-making.</p>
+              <p data-key="job1Desc">{t.job1Desc}</p>
             </div>
 
             <div class="loot-tags">
-              <span class="tag">Python</span>
-              <span class="tag">Automation</span>
-              <span class="tag">ETL</span>
+              <span class="tag" data-key="tagETL">{t.tagETL}</span>
+              <span class="tag" data-key="tagPipe">{t.tagPipe}</span>
+              <span class="tag">SQL</span>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="time-dot"></div>
-            <h3 data-key="job2Title">{content.EN.job2Title}</h3>
-            <p class="meta" data-key="job2Place">{content.EN.job2Place}</p>
+            <h3 data-key="job2Title">{t.job2Title}</h3>
+            <p class="meta" data-key="job2Place">{t.job2Place}</p>
             
             <div class="quest-details">
-              <p>Managed technical documentation and user support, ensuring all 
-                "adventurers" could navigate the system without getting lost.</p>
+              <p data-key="job2Desc">{t.job2Desc}</p>
             </div>
 
             <div class="loot-tags">
-              <span class="tag">Technical Support</span>
-              <span class="tag">Documentation</span>
+              <span class="tag" data-key="tagDoc">{t.tagDoc}</span>
+              <span class="tag">Customer Success</span>
+              <span class="tag">Linux Bash</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time-dot"></div>
+            <h3 data-key="taTitle">{t.taTitle}</h3>
+            <p class="meta" data-key="taPlace">{t.taPlace}</p>
+            
+            <div class="quest-details">
+              <p data-key="taDesc">{t.taDesc}</p>
+            </div>
+
+            <div class="loot-tags">
+              <span class="tag" data-key="tagAlg">{t.tagAlg}</span>
+              <span class="tag">Python</span>
+              <span class="tag" data-key="tagDebug">{t.tagDebug}</span>
             </div>
           </div>
 
@@ -197,22 +218,3 @@ const t = content.EN;
   });
 </script>
 
-<style>
-  main { 
-    max-width: 1100px; /* Increased from 800px */
-    margin: 4rem auto; 
-    padding: 0 1.5rem; /* Reduced padding */
-  }
-  
-  h1 { 
-    font-size: 3.5rem; /* Made slightly larger to fit the wider space */
-    color: var(--accent); 
-    margin-bottom: 1rem; 
-    letter-spacing: -1px;
-  }
-  p {
-    font-size: 1.2rem;
-    color: var(--text);
-    opacity: 0.9;
-  }
-</style>

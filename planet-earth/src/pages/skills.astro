@@ -6,66 +6,20 @@ import '../styles/skillsBook.css';
 
 const t = content.EN;
 
-// 1. Soft Skills (Cantrips) - Consolidated into one card
-const cantrips = [
-  { name: "Technical Communication" },
-  { name: "Problem Solving" },
-  { name: "Systemic Thinking" },
-  { name: "Adaptability" }
-];
-
-const technicalSkills = [
-  // ... your existing levels 1 - 7 ...
-  { name: "Javascript", lvl: 1 },
-  { name: "Typescript", lvl: 2 },
-  { name: "Docker Basics", lvl: 2 },
-  { name: "AWS Fundamentals", lvl: 2 },
-  { name: "Azure", lvl: 2 },
-  { name: "Power BI", lvl: 3 },
-  { name: "Kubernetes", lvl: 3 },
-  { name: "Linux", lvl: 4 },
-  { name: "Tensorflow", lvl: 4 },
-  { name: "Scikit-learn", lvl: 5 },
-  { name: "ETL", lvl: 5 },
-  { name: "Bash", lvl: 6 },
-  { name: "Git/GitHub", lvl: 6 },
-  { name: "SQL & Databases", lvl: 6 },
-  { name: "C++ / C", lvl: 7 },
-  { name: "Python (Backend/Data)", lvl: 7 },
-  { name: "Numpy & Pandas", lvl: 7 },
-
-  // LEVEL 8: THE SECURE DATA TIER
-  { name: "Distributed Systems", lvl: 8 },
-  { name: "Data Privacy & LGPD Compliance", lvl: 8 }, // Very important in Brazil!
-  { name: "Network Security (SSL/TLS)", lvl: 8 },
-
-  // LEVEL 9: THE INFRASTRUCTURE TIER
-  { name: "Cloud Security Architecture", lvl: 9 },
-  { name: "Infrastructure as Code", lvl: 9 },
-  { name: "Threat Intelligence Pipelines", lvl: 9 },
-
-  // LEVEL 10: THE SYSTEM MASTER TIER
-  { name: "Secure System Optimization", lvl: 10 },
-  { name: "Low-Level Vulnerability Research", lvl: 10 },
-  { name: "High-Performance Data Encryption", lvl: 10 }
-];
-
-// Logic to group skills by level
-const groupedSkills = technicalSkills.reduce((acc, skill) => {
+// Pre-group for the initial EN server-side render
+const groupedSkills = t.technicalSkills.reduce((acc, skill) => {
   if (!acc[skill.lvl]) acc[skill.lvl] = [];
   acc[skill.lvl].push(skill.name);
   return acc;
 }, {});
-
-// Sort levels ASCENDING (1 to 10)
 const sortedLevels = Object.keys(groupedSkills).sort((a, b) => Number(a) - Number(b));
 ---
-
 <Layout title="Skills | Paloma Guth">
   <Header />
 
   <main class="skills-page">
     <header class="skills-header">
+      <a href="/" class="back-link" data-key="back">{t.back}</a>
       <h1 data-key="spellbookTitle">{t.spellbookTitle}</h1>
       <p class="disclaimer" data-key="levelDisclaimer">{t.levelDisclaimer}</p>
     </header>
@@ -73,8 +27,8 @@ const sortedLevels = Object.keys(groupedSkills).sort((a, b) => Number(a) - Numbe
     <section class="intro-row">
       <article class="skill-card cantrip-main">
         <h2 class="section-label" data-key="cantripTitle">{t.cantripTitle}</h2>
-        <ul class="cantrip-list">
-          {cantrips.map(c => <li>{c.name}</li>)}
+        <ul class="cantrip-list" data-list="cantrips">
+          {t.cantrips.map(name => <li>{name}</li>)}
         </ul>
       </article>
 
@@ -96,11 +50,11 @@ const sortedLevels = Object.keys(groupedSkills).sort((a, b) => Number(a) - Numbe
               {isLocked && <i class="fa-solid fa-lock lock-icon"></i>}
             </div>
             
-            <h3 class="lvl-title">
-              {isLocked ? "Future Quest..." : `Level ${lvl} Masteries`}
+            <h3 class="lvl-title" data-lvl={lvl} data-locked={isLocked}>
+              {isLocked ? t.futureQuest : t.lvlMastery.replace('{n}', lvl)}
             </h3>
             
-            <ul class="mastery-list">
+            <ul class="mastery-list" data-lvl-list={lvl}>
               {groupedSkills[lvl].map(skillName => (
                 <li>{skillName}</li>
               ))}
@@ -111,3 +65,43 @@ const sortedLevels = Object.keys(groupedSkills).sort((a, b) => Number(a) - Numbe
     </section>
   </main>
 </Layout>
+
+<script define:vars={{ content }}>
+  window.addEventListener('langChange', (e) => {
+    const lang = e.detail;
+    const t = content[lang];
+
+    // Update simple text
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (t[key]) el.innerText = t[key];
+    });
+
+    // Update Cantrips list
+    const cantripList = document.querySelector('[data-list="cantrips"]');
+    if (cantripList) {
+      cantripList.innerHTML = t.cantrips.map(c => `<li>${c}</li>`).join('');
+    }
+
+    // Update Technical Skills lists
+    const grouped = t.technicalSkills.reduce((acc, skill) => {
+      if (!acc[skill.lvl]) acc[skill.lvl] = [];
+      acc[skill.lvl].push(skill.name);
+      return acc;
+    }, {});
+
+    document.querySelectorAll('[data-lvl-list]').forEach(ul => {
+      const lvl = ul.getAttribute('data-lvl-list');
+      if (grouped[lvl]) {
+        ul.innerHTML = grouped[lvl].map(s => `<li>${s}</li>`).join('');
+      }
+    });
+
+    // Update level titles (e.g., "Level 7 Masteries")
+    document.querySelectorAll('.lvl-title').forEach(h3 => {
+        const lvl = h3.getAttribute('data-lvl');
+        const isLocked = h3.getAttribute('data-locked') === 'true';
+        h3.innerText = isLocked ? t.futureQuest : t.lvlMastery.replace('{n}', lvl);
+    });
+  });
+</script>

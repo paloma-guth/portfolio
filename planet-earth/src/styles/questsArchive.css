@@ -1,0 +1,134 @@
+/* src/styles/questArchive.css */
+.quest-archive {
+    max-width: 850px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.quest-entry {
+    margin-bottom: 2.5rem;
+    background: var(--card); /* Static background */
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    /* Removed hover transforms for a simpler feel */
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+/* COMPLETED BADGE: High Contrast Green */
+.badge.completed {
+    background: #1a4d2e; /* Dark forest green box */
+    color: #a7f3d0;      /* Very light mint/green text */
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* TEXT HIERARCHY */
+.short-explanation {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* EXPANDABLE AREA */
+.full-lore {
+    display: none; /* Controlled by JS */
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--accent);
+}
+
+.full-lore.active {
+    display: block;
+}
+
+.lore-content {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.lore-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border);
+}
+
+/* src/styles/questArchive.css */
+
+.entry-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    /* Reduced space between title and content */
+    margin-bottom: 0.3rem; 
+}
+
+.entry-header h2 {
+    font-size: 1.5rem;
+    margin: 0; /* Removes default browser margins */
+    color: var(--accent);
+}
+
+.short-explanation {
+    margin-top: 0; /* Tightens the gap further */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* --- RESOURCE LINKS (GitHub & Medium) --- */
+.quest-resources {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.resource-link:hover {
+    color: var(--accent);
+}
+
+.resource-link i {
+    font-size: 1.1rem;
+}

@@ -1,75 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import '../styles/questsArchive.css';
+import { content } from '../components/languages';
 
-// You can expand this content object with the "Long" versions of your descriptions
-const detailedContent = {
-  EN: {
-    title: "Full Quest Log",
-    back: "← Return to Town (Home)",
-    ganLong: "Deep dive into GANs: I used TensorFlow to build a DCGAN... (Add your 3-4 paragraphs here)",
-    batoceraLong: "The Debian Migration: This involved move 20+ workstations... (Add details here)"
-  },
-  PT: {
-    title: "Diário de Missões Completo",
-    back: "← Voltar para a Vila (Home)",
-    ganLong: "Detalhes do GAN: Utilizei TensorFlow para construir uma DCGAN... (Adicione seus detalhes aqui)",
-    batoceraLong: "Migração Debian: Este projeto envolveu a migração de 20+ estações... (Adicione detalhes aqui)"
-  }
-};
+const t = content.EN;
 ---
 
 <Layout title="Quest Log | Paloma">
   <Header />
   <main class="quest-archive">
-    <a href="/" class="back-link" data-key="back">{detailedContent.EN.back}</a>
-    
-    <h1 data-key="title" class="page-title">{detailedContent.EN.title}</h1>
+    <a href="/" class="back-link" data-key="back">{t.back}</a>
+    <h1 class="page-title" data-key="questTitle">{t.questTitle}</h1>
 
     <article class="quest-entry">
       <div class="entry-header">
         <h2>Graffiti Generator (GANs)</h2>
-        <span class="badge">Completed</span>
+        <span class="badge completed" data-key="statusCompleted">{t.statusCompleted}</span>
       </div>
-      <p class="long-desc" data-key="ganLong">{detailedContent.EN.ganLong}</p>
-      </article>
 
-    <article class="quest-entry">
-      <div class="entry-header">
-        <h2>Debian to Batocera Integration</h2>
-        <span class="badge">Completed</span>
+      <p class="short-explanation" data-key="ganShort">{t.ganShort}</p>
+
+      <button class="expand-btn">
+        <span class="btn-text" data-key="analysisBtn">{t.analysisBtn}</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <div class="full-lore">
+        <div class="lore-content" data-key="ganFull">{t.ganFull}</div>
+        
+        <div class="quest-resources">
+          <a href="https://github.com/..." target="_blank" class="resource-link">
+            <i class="fa-brands fa-github"></i>
+            <span data-key="viewRepo">{t.viewRepo}</span>
+          </a>
+          <a href="https://medium.com/..." target="_blank" class="resource-link">
+            <i class="fa-brands fa-medium"></i>
+            <span data-key="readMedium">{t.readMedium}</span>
+          </a>
+        </div>
       </div>
-      <p class="long-desc" data-key="batoceraLong">{detailedContent.EN.batoceraLong}</p>
     </article>
   </main>
 </Layout>
 
-<style>
-  .quest-archive {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-  }
-  .page-title { color: var(--accent); font-size: 3rem; margin: 1rem 0 3rem 0; }
-  .back-link { color: var(--secondary); text-decoration: none; font-size: 0.9rem; }
-  
-  .quest-entry {
-    margin-bottom: 4rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .entry-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-  .badge { background: #1a4d2e; color: #4ade80; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; }
-  .long-desc { line-height: 1.8; color: var(--text); opacity: 0.9; }
-</style>
+<script define:vars={{ content }}>
+  // 1. Expansion Logic
+  document.querySelectorAll('.expand-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.quest-entry');
+      const lore = parent.querySelector('.full-lore');
+      const textSpan = btn.querySelector('.btn-text');
+      const icon = btn.querySelector('i');
+      
+      const isOpen = lore.classList.toggle('active');
+      
+      // Get current language from local storage or html tag
+      const lang = document.documentElement.lang || 'EN';
+      
+      if (isOpen) {
+        icon.className = 'fa-solid fa-minus';
+        textSpan.innerText = content[lang].closeBtn;
+      } else {
+        icon.className = 'fa-solid fa-plus';
+        textSpan.innerText = content[lang].analysisBtn;
+      }
+    });
+  });
 
-<script define:vars={{ detailedContent }}>
-  // Copy your language switcher logic here so this page also translates!
+  // 2. Universal Language Switcher
   window.addEventListener('langChange', (e) => {
     const lang = e.detail;
+    document.documentElement.lang = lang; // Update helper
+    const t = content[lang];
+
     document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
-      if (detailedContent[lang][key]) el.innerText = detailedContent[lang][key];
+      
+      // Special logic for the button text so it doesn't revert incorrectly
+      if (key === 'analysisBtn') {
+        const isCurrentlyOpen = el.closest('.quest-entry').querySelector('.full-lore').classList.contains('active');
+        el.innerText = isCurrentlyOpen ? t.closeBtn : t.analysisBtn;
+      } else if (t[key]) {
+        el.innerText = t[key];
+      }
     });
   });
 </script>
