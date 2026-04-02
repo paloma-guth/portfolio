@@ -1,20 +1,42 @@
 import React, { useState, useEffect } from 'react';
 
 export default function ActionControls() {
+  // We start with a default, but useEffect will sync it with the "Save File"
   const [isDark, setIsDark] = useState(true);
   const [lang, setLang] = useState('EN');
 
-  // Theme Logic
+  // 1. SYNC ON LOAD: This runs once when you change pages
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedLang = localStorage.getItem('lang') || 'EN';
+
+    setIsDark(savedTheme === 'dark');
+    setLang(savedLang);
+
+    // Apply the saved theme to the HTML tag immediately
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // Tell Astro components which language to show
+    window.dispatchEvent(new CustomEvent('langChange', { detail: savedLang }));
+  }, []);
+
+  // 2. TOGGLE THEME: Save to localStorage so it persists
   const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    document.documentElement.classList.toggle('dark', newTheme);
+    const newTheme = !isDark ? 'dark' : 'light';
+    setIsDark(!isDark);
+    
+    // Update the HTML attribute (this triggers your CSS variables)
+    document.documentElement.setAttribute('data-theme', newTheme);
+    
+    // Save the choice
+    localStorage.setItem('theme', newTheme);
   };
 
-  // Language Logic
+  // 3. TOGGLE LANGUAGE: Save to localStorage
   const toggleLang = (selectedLang) => {
     setLang(selectedLang);
-    // This custom event tells the rest of the page the language changed
+    localStorage.setItem('lang', selectedLang);
+    
     window.dispatchEvent(new CustomEvent('langChange', { detail: selectedLang }));
   };
 
@@ -23,6 +45,7 @@ export default function ActionControls() {
       {/* Theme Slider */}
       <div className="theme-switch-wrapper">
         <label className="theme-switch">
+          {/* Changed toggleTheme to the onChange handler */}
           <input type="checkbox" checked={isDark} onChange={toggleTheme} />
           <div className="slider round">
             <div className="icon-container">
@@ -45,7 +68,13 @@ export default function ActionControls() {
         >PT</button>
       </div>
 
-      <a href="/my-cv.pdf" download className="cv-btn">CV</a>
+      <a 
+        href={lang === 'EN' ? '/Paloma_Guth_Kronbauer_cv-english.pdf' : '/Paloma_Guth_Kronbauer_cv-portugues.pdf'} 
+        download={lang === 'EN' ? 'Paloma_Guth_Kronbauer_cv-english.pdf' : 'Paloma_Guth_Kronbauer_cv-portugues.pdf'} 
+        className="cv-btn"
+      >
+        CV
+      </a>    
     </div>
   );
 }

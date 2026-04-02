@@ -13,11 +13,22 @@
   margin-bottom: 2rem;
 }
 
+.section-label {
+  margin-top: 0.6rem;       /* Removes the gap at the top */
+  margin-bottom: 1rem; /* Keeps space between title and the list */
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  line-height: 1;      /* Prevents extra height from the font line-box */
+}
+
 .cantrip-main {
   background: var(--card);
   border: 2px dashed var(--accent);
-  padding: 2rem;
+  padding: 1.5rem 2rem 2rem; /* Reduced top padding from 2rem to 1.5rem */
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cantrip-list {

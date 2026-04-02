@@ -1,0 +1,43 @@
+---
+const { t } = Astro.props;
+---
+<section id="active-quests">
+  <h2 data-key="activeQuests">{t.activeQuests}</h2>
+  
+  <div class="quest-list">
+    <a href="https://github.com/paloma-guth/stardew-pipeline" target="_blank" class="quest-card-link">
+      <article class="quest-card active">
+        <div class="pulse-indicator"></div> 
+        <h3 data-key="stardewTitle">{t.stardewTitle}</h3>
+        <p data-key="stardewDesc">{t.stardewDesc}</p>
+        
+        <div class="loot-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Scrapy</span>
+          <span class="tag" data-key="tagWrangling">{t.tagWrangling}</span>
+        </div>
+      </article>
+    </a>
+
+    <a href="https://github.com/paloma-guth/sql-sorcery" target="_blank" class="quest-card-link">
+      <article class="quest-card active">
+        <div class="pulse-indicator"></div>
+        <h3 data-key="sqlTitle">{t.sqlTitle}</h3>
+        <p data-key="sqlDesc">{t.sqlDesc}</p>
+        
+        <div class="loot-tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag" data-key="tagPipe">{t.tagPipe}</span>
+          <span class="tag" data-key="tagSoftware">{t.tagSoftware}</span>
+        </div>
+      </article>
+    </a>
+
+    <div class="quest-footer">
+      <a href="/quests" class="quest-log-btn">
+        <i class="fa-solid fa-book-journal-whills"></i> 
+        <span data-key="seeQuestLog">{t.seeQuestLog}</span>
+      </a>
+    </div>
+  </div>
+</section>

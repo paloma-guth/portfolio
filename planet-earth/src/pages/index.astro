@@ -1,9 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Sidebar from '/workspaces/portfolio/planet-earth/src/pages/Siderbar.astro';
+import Sidebar from '../pages/Siderbar.astro';
+import Education from '../pages/education.astro';
+import Experience from '../pages/experience.astro';
+import ActiveQuests from '../pages/activeQuests.astro';
+import Inventory from '../pages/inventory.astro';
 import '../styles/sidebar.css';
 import { content } from '../components/languages';
+
 const t = content.EN;
 ---
 
@@ -19,187 +24,13 @@ const t = content.EN;
         <p class="bio-text" data-key="bio">{content.EN.bio}</p>
       </section>
 
-      <section id="education">
-        <h2 data-key="education">{t.education}</h2>
-        <div class="timeline">
+      <Education t={t} />
 
-          <div class="timeline-item">
-            <div class="time-dot"></div>
-            <h3 data-key="stOlafTitle">{t.stOlafTitle}</h3>
-            <p class="meta" data-key="stOlafPlace">{t.stOlafPlace}</p>
-            
-            <div class="loot-tags">
-              <span class="tag" data-key="tagProb">{t.tagProb}</span>
-              <span class="tag" data-key="tagML">{t.tagML}</span>
-              <span class="tag">C / C++</span>
-              <span class="tag">Python</span>
-              <span class="tag" data-key="tagSoftware">{t.tagSoftware}</span>
-              <span class="tag" data-key="tagForest">{t.tagForest}</span>
-              <span class="tag" data-key="tagWrangling">{t.tagWrangling}</span>
-              <span class="tag" data-key="tagTheory">{t.tagTheory}</span>
-            </div>
-          </div>
+      <ActiveQuests t={t} />
 
-          <div class="timeline-item">
-            <div class="time-dot"></div>
-            <h3 data-key="disTitle">{t.disTitle}</h3>
-            <p class="meta" data-key="disPlace">{t.disPlace}</p>
-            
-            <div class="loot-tags">
-              <span class="tag" data-key="tagDeep">{t.tagDeep}</span>
-              <span class="tag" data-key="tagBigData">{t.tagBigData}</span>
-              <span class="tag" data-key="tagAI">{t.tagAI}</span>
-              <span class="tag" data-key="tagGameTheory">{t.tagGameTheory}</span>
-              <span class="tag" data-key="tagCollab">{t.tagCollab}</span>
-            </div>
-          </div>
+      <Experience t={t} />
 
-          <div class="timeline-item">
-            <div class="time-dot"></div>
-            <h3 data-key="ibTitle">{t.ibTitle}</h3>
-            <p class="meta" data-key="ibPlace">{t.ibPlace}</p>
-            
-            <div class="loot-tags">
-              <span class="tag" data-key="tagResearch">{t.tagResearch}</span>
-              <span class="tag" data-key="tagIndep">{t.tagIndep}</span>
-              <span class="tag" data-key="tagInter">{t.tagInter}</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="active-quests">
-        <h2 data-key="activeQuests">{t.activeQuests}</h2>
-        
-        <div class="quest-list">
-          <a href="https://github.com/paloma-guth/stardew-pipeline" target="_blank" class="quest-card-link">
-            <article class="quest-card active">
-              <div class="pulse-indicator"></div> 
-              <h3 data-key="stardewTitle">{t.stardewTitle}</h3>
-              <p data-key="stardewDesc">{t.stardewDesc}</p>
-              
-              <div class="loot-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Scrapy</span>
-                <span class="tag" data-key="tagWrangling">{t.tagWrangling}</span>
-              </div>
-            </article>
-          </a>
-
-          <a href="https://github.com/paloma-guth/sql-sorcery" target="_blank" class="quest-card-link">
-            <article class="quest-card active">
-              <div class="pulse-indicator"></div>
-              <h3 data-key="sqlTitle">{t.sqlTitle}</h3>
-              <p data-key="sqlDesc">{t.sqlDesc}</p>
-              
-              <div class="loot-tags">
-                <span class="tag">PostgreSQL</span>
-                <span class="tag" data-key="tagPipe">{t.tagPipe}</span>
-                <span class="tag" data-key="tagSoftware">{t.tagSoftware}</span>
-              </div>
-            </article>
-          </a>
-
-          <div class="quest-footer">
-            <a href="/quests" class="quest-log-btn">
-              <i class="fa-solid fa-book-journal-whills"></i> 
-              <span data-key="seeQuestLog">{t.seeQuestLog}</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience">
-        <h2 data-key="experience">{t.experience}</h2>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="time-dot"></div>
-            <h3 data-key="job1Title">{t.job1Title}</h3>
-            <p class="meta" data-key="job1Place">{t.job1Place}</p>
-            
-            <div class="quest-details">
-              <p data-key="job1Desc">{t.job1Desc}</p>
-            </div>
-
-            <div class="loot-tags">
-              <span class="tag" data-key="tagETL">{t.tagETL}</span>
-              <span class="tag" data-key="tagPipe">{t.tagPipe}</span>
-              <span class="tag">SQL</span>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="time-dot"></div>
-            <h3 data-key="job2Title">{t.job2Title}</h3>
-            <p class="meta" data-key="job2Place">{t.job2Place}</p>
-            
-            <div class="quest-details">
-              <p data-key="job2Desc">{t.job2Desc}</p>
-            </div>
-
-            <div class="loot-tags">
-              <span class="tag" data-key="tagDoc">{t.tagDoc}</span>
-              <span class="tag">Customer Success</span>
-              <span class="tag">Linux Bash</span>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="time-dot"></div>
-            <h3 data-key="taTitle">{t.taTitle}</h3>
-            <p class="meta" data-key="taPlace">{t.taPlace}</p>
-            
-            <div class="quest-details">
-              <p data-key="taDesc">{t.taDesc}</p>
-            </div>
-
-            <div class="loot-tags">
-              <span class="tag" data-key="tagAlg">{t.tagAlg}</span>
-              <span class="tag">Python</span>
-              <span class="tag" data-key="tagDebug">{t.tagDebug}</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="inventory">
-        <h2 data-key="inventory">Inventory & Achievements</h2>
-        
-        <div class="badge-grid">
-          <div class="badge-item">
-            <div class="badge-icon">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div class="badge-info">
-              <span class="badge-name">Pre-Security</span>
-              <span class="badge-source">TryHackMe</span>
-            </div>
-          </div>
-
-          <div class="badge-item">
-            <div class="badge-icon">
-              <i class="fa-solid fa-scroll"></i>
-            </div>
-            <div class="badge-info">
-              <span class="badge-name">Python for Data</span>
-              <span class="badge-source">Google Cert.</span>
-            </div>
-          </div>
-
-          <div class="badge-item">
-            <div class="badge-icon">
-              <i class="fa-solid fa-terminal"></i>
-            </div>
-            <div class="badge-info">
-              <span class="badge-name">Linux Basics</span>
-              <span class="badge-source">Skill Unlocked</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Inventory t={t} />      
     </div>
 
     <Sidebar content={content} lang="EN" />
@@ -208,13 +39,22 @@ const t = content.EN;
 </Layout>
 
 <script define:vars={{ content }}>
-  window.addEventListener('langChange', (e) => {
-    const selectedLang = e.detail;
-    const translations = content[selectedLang];
-    document.querySelectorAll('[data-key]').forEach((el) => {
+  const translate = (l) => {
+    const t = content[l];
+    document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
-      if (translations[key]) el.innerText = translations[key];
+      if (t[key]) el.innerText = t[key];
     });
-  });
+  };
+
+  // Run immediately
+  const startLang = localStorage.getItem('lang') || 'EN';
+  if (startLang !== 'EN') {
+    // If it's not English, we need to hide the body momentarily or 
+    // run the translation so fast it's invisible.
+    translate(startLang);
+  }
+
+  window.addEventListener('langChange', (e) => translate(e.detail));
 </script>
 

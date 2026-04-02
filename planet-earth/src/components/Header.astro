@@ -1,5 +1,8 @@
 ---
 import ActionButtons from './Button.jsx';
+
+import { content } from '../components/languages';
+const t = content.EN;
 ---
 
 <header>
@@ -8,9 +11,9 @@ import ActionButtons from './Button.jsx';
 
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/quests">Quests</a></li>
-        <li><a href="/skills">Skills</a></li>
+        <li><a href="/" data-key="navHome">{t.navHome}</a></li>
+        <li><a href="/quests" data-key="navQuests">{t.navQuests}</a></li>
+        <li><a href="/skills" data-key="navSkills">{t.navSkills}</a></li>
       </ul>
       
       <div class="divider"></div>

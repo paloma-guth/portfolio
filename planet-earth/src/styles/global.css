@@ -1,7 +1,6 @@
 /* src/styles/global.css */
 
-:root {
-  /* DARK THEME (Forest/Nature) */
+:root, [data-theme='dark'] {
   --bg: #283618;          /* Black Forest */
   --card: #606c38;        /* Olive Leaf */
   --text: #fefae0;        /* Cornsilk */
@@ -10,8 +9,8 @@
   --border: #606c38;
 }
 
-/* LIGHT THEME (Lavender/Dusty Mauve) */
-:root:not(.dark) {
+/* --- LIGHT THEME (The Overwrite State) --- */
+[data-theme='light'] {
   --bg: #f5e6e8;          /* Lavender Blush */
   --card: #d5c6e0;        /* Thistle */
   --text: #192a51;        /* Space Indigo */

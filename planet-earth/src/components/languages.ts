@@ -77,10 +77,6 @@ export const content = {
     lvlGroupTitle: "Level {n} Spells",
     spellBookBtn: "Full Spellbook",
     tongues: "Known Tongues",
-    native: "Native",
-    fluent: "Fluent",
-    inter: "Intermediate",
-    basic: "Basic",
 
     spellbookTitle: "The Paladin's Spellbook",
     levelDisclaimer: "Levels represent current proficiency & ongoing research.",
@@ -133,8 +129,20 @@ export const content = {
     ganFull: "This project explored the equilibrium between Generator and Discriminator...",
     // Project 2
     batoceraShort: "Migrating 20+ workstations from Debian to Batocera.",
-    batoceraFull: "This infrastructure project involved automated deployment scripts..."
+    batoceraFull: "This infrastructure project involved automated deployment scripts...",
 
+    navHome: "Home",
+    navQuests: "Quests",
+    navSkills: "Skills",
+
+    langPort: "Portuguese",
+    langEng: "English",
+    langSpan: "Spanish",
+    langGer: "German",
+    native: "Native",
+    fluent: "Fluent",
+    inter: "Intermediate",
+    basic: "Basic"
   },
   PT: {
     heroTitle: "Paloma Guth Kronbauer",
@@ -218,10 +226,6 @@ export const content = {
     tongues: "Idiomas Conhecidos",
   
     lvlGroupTitle: "Magias de Nível {n}",
-    native: "Nativo",
-    fluent: "Fluente",
-    inter: "Intermediário",
-    basic: "Básico",
 
     spellbookTitle: "O Grimório da Paladina",
     levelDisclaimer: "Níveis representam proficiência atual e pesquisas em andamento.",
@@ -273,6 +277,19 @@ export const content = {
     ganFull: "Este projeto explorou o equilíbrio entre Gerador e Discriminador...",
     // Project 2
     batoceraShort: "Migração de 20+ estações de Debian para Batocera.",
-    batoceraFull: "Este projeto de infraestrutura envolveu scripts de automação..."
+    batoceraFull: "Este projeto de infraestrutura envolveu scripts de automação...",
+
+    navHome: "Início",
+    navQuests: "Missões",
+    navSkills: "Habilidades",
+
+    langPort: "Português",
+    langEng: "Inglês",
+    langSpan: "Espanhol",
+    langGer: "Alemão",
+    native: "Nativo",
+    fluent: "Fluente",
+    inter: "Intermediário",
+    basic: "Básico",
   }
 };
