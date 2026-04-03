@@ -21,7 +21,14 @@ const t = content.EN;
         <h1 data-key="heroTitle">{content.EN.heroTitle}</h1>
         <p class="subtitle" data-key="heroSub">{content.EN.heroSub}</p>
         <div class="divider"></div>
-        <p class="bio-text" data-key="bio">{content.EN.bio}</p>
+        <div class="bio-section">
+          <p class="sidebar-bio" data-key="bio">{t.bio}</p>
+          
+          <div class="extra-section">
+            <span class="extra-label" data-key="extraTitle">{t.extraTitle}</span>
+            <p class="extra-text" data-key="extraBio">{t.extraBio}</p>
+          </div>
+        </div>
       </section>
 
       <Education t={t} />

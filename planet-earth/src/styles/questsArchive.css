@@ -5,42 +5,72 @@
     padding: 0 2rem;
 }
 
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.6rem; /* Increased from default */
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+/* 2. Space between "Quest Log" title and the first Card */
+.page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem; /* Large gap before the cards start */
+}
+
 .quest-entry {
     margin-bottom: 2.5rem;
-    background: var(--card); /* Static background */
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2rem;
-    /* Removed hover transforms for a simpler feel */
+    background: var(--card); 
+    border: 1px dashed var(--border);
+    padding: 2.5rem;
+    position: relative;
 }
 
-.entry-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 1rem;
+/* Header Adjustments */
+.entry-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 0.5rem; 
+    padding-bottom: 0.8rem;
 }
 
-/* COMPLETED BADGE: High Contrast Green */
-.badge.completed {
-    background: #1a4d2e; /* Dark forest green box */
-    color: #a7f3d0;      /* Very light mint/green text */
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
+.entry-header h2 {
+    font-family: 'Cinzel', serif; /* Consistent with your Paladin branding */
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--accent);
     letter-spacing: 1px;
 }
 
-/* TEXT HIERARCHY */
+/* Status Badge - Adjusted for "Old Paper" colors */
+.badge.completed {
+    background: var(--accent); /* Uses your Saddle Brown/Ink color */
+    color: var(--bg);        /* Paper color for the text */
+    padding: 4px 10px;
+    border-radius: 3px;      /* Sharper corners for a stamped look */
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Text & Buttons */
 .short-explanation {
+    margin-top: 0.5rem;
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text);
-    margin-bottom: 1rem;
+    font-style: italic; /* Makes the "short lore" feel like a summary */
 }
 
 .expand-btn {
@@ -49,72 +79,90 @@
     color: var(--accent);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     cursor: pointer;
-    padding: 0;
-    display: flex;
+    padding: 10px 8px;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
 }
 
-/* EXPANDABLE AREA */
+.expand-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* Expandable Lore Area */
 .full-lore {
-    display: none; /* Controlled by JS */
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px dashed var(--accent);
+    display: none;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px double var(--border); /* Double line for a vintage divider */
 }
 
 .full-lore.active {
     display: block;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .lore-content {
     font-size: 0.95rem;
     line-height: 1.8;
+    color: var(--text);
+    text-align: justify; /* Academic look */
 }
 
 .lore-image {
+    /* Ensures padding/border are calculated INSIDE the width */
+    box-sizing: border-box; 
+    
+    /* Makes the image smaller than the full text width for a "figure" look */
+    display: block;
     width: 100%;
-    border-radius: 8px;
-    margin: 1.5rem 0;
+    max-width: 500px; /* Limits size so it doesn't overwhelm the text */
+    margin: 2rem auto; /* Centers the image */
+    
+    border-radius: 2px;
     border: 1px solid var(--border);
+    padding: 8px; /* Space between the frame and the image */
+    background: #ffffff; 
+    
+    /* Aesthetic blending */
+    filter: sepia(0.2) contrast(1.1);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.05); /* Subtle depth on paper */
 }
 
-/* src/styles/questArchive.css */
-
-.entry-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    /* Reduced space between title and content */
-    margin-bottom: 0.3rem; 
+.project-figure {
+    margin: 2rem 0;
+    text-align: center;
 }
 
-.entry-header h2 {
-    font-size: 1.5rem;
-    margin: 0; /* Removes default browser margins */
-    color: var(--accent);
+.figure-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: var(--secondary);
+    margin-top: -1.5rem; /* Pulls it closer to the image */
+    margin-bottom: 2rem;
+    font-style: italic;
+    opacity: 0.8;
 }
 
-.short-explanation {
-    margin-top: 0; /* Tightens the gap further */
-    font-size: 0.95rem;
-    line-height: 1.5;
-    opacity: 0.9;
-}
-
-/* --- RESOURCE LINKS (GitHub & Medium) --- */
-.quest-resources {
+/* Resource Links */
+ .quest-resources {
     display: flex;
     gap: 1.5rem;
     margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.resource-link {
+} 
+ .resource-link {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -131,4 +179,4 @@
 
 .resource-link i {
     font-size: 1.1rem;
-}
+} 

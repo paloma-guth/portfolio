@@ -1,217 +1,142 @@
+/* ==========================================================================
+   1. VARIABLES & THEMING
+   ========================================================================== */
 /* src/styles/global.css */
 
-:root, [data-theme='dark'] {
-  --bg: #283618;          /* Black Forest */
-  --card: #606c38;        /* Olive Leaf */
-  --text: #fefae0;        /* Cornsilk */
-  --accent: #dda15e;      /* Sunlit Clay */
-  --secondary: #bc6c25;   /* Copperwood */
-  --border: #606c38;
+:root, [data-theme='light'] {
+  --bg: #f2e8cf;         /* Eggshell/Aged Paper */
+  --card: #e7d8b1;       /* Darker Parchment for contrast */
+  --text: #3d3d3d;       /* Soft Charcoal (Better than pure black) */
+  --accent: #8b4513;     /* Saddle Brown (Ink color) */
+  --secondary: #6b705c;  /* Sage/Olive (Muted forest tones) */
+  --border: #bcad90;     /* Faded Gold/Brass */
+  --accent-rgb: 139, 69, 19;
 }
 
-/* --- LIGHT THEME (The Overwrite State) --- */
-[data-theme='light'] {
-  --bg: #f5e6e8;          /* Lavender Blush */
-  --card: #d5c6e0;        /* Thistle */
-  --text: #192a51;        /* Space Indigo */
-  --accent: #967aa1;      /* Dusty Mauve */
-  --secondary: #aaa1c8;   /* Lilac Ash */
-  --border: #aaa1c8;
+/* --- DARK THEME (The "Obsidian Tome" State) --- */
+[data-theme='dark'] {
+  --bg: #1c1c1c;         /* Deep Ink/Charcoal */
+  --card: #2d2d2d;       /* Dark Slate */
+  --text: #e0d6b8;       /* Faded Paper text (Creamy white) */
+  --accent: #dda15e;     /* Sunlit Clay (Gold leaf effect) */
+  --secondary: #a68a64;  /* Bronzed wood */
+  --border: #4a4a4a;
+  --accent-rgb: 221, 161, 94;
 }
 
-/* Global Styles */
+/* ==========================================================================
+   2. BASE TYPOGRAPHY & RESET
+   ========================================================================== */
 html, body {
   margin: 0;
   padding: 0;
   background-color: var(--bg);
   color: var(--text);
-  /* Added a more robust font stack */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Use Montserrat as the "Normal" base font */
+  font-family: 'Montserrat', sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  letter-spacing: 0.3px;
 }
 
+/* Titles get the "Legendary" font */
 h1, h2, h3 {
-  /* Use Cinzel for headers if you have it imported, otherwise serif looks more "RPG" */
   font-family: 'Cinzel', serif; 
   color: var(--accent);
   font-weight: 700;
   line-height: 1.1;
+  margin: 0;
 }
 
-/* If you don't want Cinzel for everything, keep h3 as Inter for clarity */
-h3 {
-  font-family: 'Inter', sans-serif;
-  letter-spacing: -0.02em;
-}
-
-/* Fixes for broken variables in your current file */
-a {
-    color: var(--accent); /* Changed from crimson */
-    text-decoration: none;
-    transition: 0.3s ease;
-    border-bottom: 1px solid transparent;
-}
-
-a:hover {
-    color: var(--secondary); /* Changed from gold */
-}
-
-/* Base Paragraph refinement */
-p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0.5rem 0;
-    color: var(--text);
-}
-
-body, p {
-  font-family: 'Lora', serif;
-  line-height: 1.8; /* Serifs need more breathing room */
-}
-
-/* Update your Google Font link in Layout.astro to include Montserrat */
-body, p, span, .tag {
+/* Normal text reset */
+p, span, .tag, .sidebar-bio, .extra-text {
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.3px; /* Makes it feel "premium" */
+  font-size: 0.82rem;
+  margin: 0; /* Resetting margins here fixes the gaps */
 }
 
-/* --- ICON SLIDER CSS --- */
-.nav-controls {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 54px;
-  height: 28px;
-}
-
-.theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: var(--card);
-  border: 1px solid var(--text);
-  transition: .4s;
-  border-radius: 34px;
-  overflow: hidden; /* Keeps icons inside the rounded corners */
-}
-
-/* The Sliding Knob */
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-  z-index: 2; /* Sits on top of icons */
-}
-
-input:checked + .slider {
-  background-color: var(--secondary);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px); /* Moves the white circle to the right */
-  background-color: var(--bg);  /* Makes the circle pop against the new background */
-}
-
-/* Icon Styling inside the slider */
-.icon-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding: 0 6px;
-  color: var(--text);
-}
-
-.icon {
-  width: 14px;
-  height: 14px;
-  z-index: 1;
-}
-
-/* Dark mode icon adjustments */
-input:checked + .slider .icon-container {
-  color: #fff;
-}
-
-.lang-btn, .cv-btn {
-  /* Keep your existing button styles here */
-  font-family: inherit;
-  cursor: pointer;
-}
-
-/* Language Switcher Styling */
-.lang-switcher {
-  display: flex;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 2px;
-  gap: 2px;
-}
-
-.lang-option {
-  background: none;
-  border: none;
-  color: var(--text);
-  padding: 4px 12px;
-  border-radius: 18px;
-  cursor: pointer;
-  font-size: 0.75rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  opacity: 0.6;
-}
-
-.lang-option.active {
-  background: var(--accent);
-  color: white;
-  opacity: 1;
-}
-
-.cv-btn {
-  background: var(--secondary);
-  color: var(--text) !important;
-  padding: 6px 16px;
-  border-radius: 20px;
+a {
+  color: var(--accent);
   text-decoration: none;
-  font-weight: bold;
-  font-size: 0.8rem;
-  border: 1px solid var(--border);
+  transition: 0.3s ease;
 }
+a:hover { color: var(--secondary); }
 
+/* ==========================================================================
+   3. LAYOUT & GRID
+   ========================================================================== */
 .portfolio-grid {
   display: grid;
-  /* Reduced max-width from 1300px to 1050px for better readability */
   max-width: 1050px; 
-  /* This creates the "larger side margins" */
   margin: 4rem auto;
   padding: 0 2rem;
-  
-  /* Adjusted ratio: Main content is slightly less dominant, sidebar is stable */
   grid-template-columns: 1.8fr 1fr; 
-  gap: 4rem; /* Increased gap to prevent crowding */
+  gap: 4rem;
 }
 
-/* TIMELINE (Left) */
+@media (max-width: 900px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .sidebar { order: -1; }
+}
+
+/* ==========================================================================
+   4. HERO & BIO (Sidebar Content)
+   ========================================================================== */
+.hero-section {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.hero-section h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.5rem;
+  margin-top: -0.2rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 0.9rem;
+}
+
+.sidebar-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.extra-section {
+  margin-top: 0.6rem;
+  padding-top: 0.2rem;
+}
+
+.extra-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  opacity: 0.8;
+}
+
+.extra-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  font-style: italic;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ==========================================================================
+   5. TIMELINE & EDUCATION
+   ========================================================================== */
 .timeline {
   border-left: 2px solid var(--accent);
   padding-left: 20px;
@@ -233,40 +158,43 @@ input:checked + .slider .icon-container {
   border-radius: 50%;
 }
 
-/* Responsive: Stack columns on mobile */
-@media (max-width: 900px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    order: -1; /* Photo goes to top on mobile */
-  }
+.timeline-item h3 { margin: 0; font-size: 1.2rem; }
+.timeline-item .meta { font-size: 0.9rem; color: var(--accent); margin-top: 4px; }
+
+/* Degree Specifics */
+.degree-text {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.1rem;
+  line-height: 1.2;
 }
 
-.hero-section {
-  margin-bottom: 4rem;
+.minor-text {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+  line-height: 1.2;
 }
 
-.hero-section h1 {
-  font-size: 3.2rem; /* Slightly smaller to fit the narrower grid */
-  margin-bottom: 0.5rem;
-}
+.meta { font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.4rem; }
 
+/* ==========================================================================
+   6. PROJECTS & SECTIONS
+   ========================================================================== */
 section h2 {
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
-  margin-top: 3rem; /* Adds space between major sections */
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--secondary);
-  margin-bottom: 2rem;
+  font-family: 'Cinzel', serif;
 }
 
 .project-card {
@@ -283,52 +211,37 @@ section h2 {
   border-color: var(--accent);
 }
 
-.timeline-item h3 {
-  margin: 0;
-  font-size: 1.2rem;
+/* ==========================================================================
+   7. NAVIGATION CONTROLS (Theme/Lang Switchers)
+   ========================================================================== */
+.nav-controls { display: flex; align-items: center; gap: 1.2rem; }
+
+.theme-switch { position: relative; display: inline-block; width: 54px; height: 28px; }
+.theme-switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--card);
+  border: 1px solid var(--text);
+  transition: .4s;
+  border-radius: 34px;
+  overflow: hidden;
 }
 
-.timeline-item .meta {
-  font-size: 0.9rem;
-  color: var(--accent);
-  margin-top: 4px;
+.slider:before {
+  position: absolute; content: ""; height: 20px; width: 20px;
+  left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%;
+  z-index: 2;
 }
 
-#education {
-  margin-bottom: 3rem;
-}
+input:checked + .slider { background-color: var(--secondary); }
+input:checked + .slider:before { transform: translateX(26px); background-color: var(--bg); }
 
-.edu-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+.icon-container { display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 6px; color: var(--text); }
+.icon { width: 14px; height: 14px; z-index: 1; }
 
-.edu-item h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--text);
-}
+.lang-switcher { display: flex; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2px; gap: 2px; }
+.lang-option { background: none; border: none; color: var(--text); padding: 4px 12px; border-radius: 18px; cursor: pointer; font-size: 0.75rem; font-weight: bold; transition: all 0.3s ease; opacity: 0.6; }
+.lang-option.active { background: var(--accent); color: white; opacity: 1; }
 
-.edu-item .meta {
-  color: var(--accent);
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-top: 4px;
-}
-
-.secondary-edu {
-  padding-left: 1rem;
-  border-left: 1px solid var(--border);
-  opacity: 0.8;
-}
-
-section h2 {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Cinzel', serif; /* If using the D&D font */
-  font-size: 1.5rem;
-}
-
-
+.cv-btn { background: var(--secondary); color: var(--text) !important; padding: 6px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.8rem; border: 1px solid var(--border); }

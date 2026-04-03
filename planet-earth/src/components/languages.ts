@@ -4,11 +4,15 @@ export const content = {
     heroTitle: "Paloma Guth Kronbauer",
     heroSub: "Computer Science & Mathematics @ St. Olaf College",
     about: "The Archive",
-    bio: "Data Engineer and Backend Developer specialized in Linux environments, Python automation, and optimizing systems for scalability and security.",
+    bio: "A tinkerer at heart. I spent my time at college diving deep into Math and CS theory because I believe you have to understand how a system works before you can truly master it. I’ve always been obsessed with the 'how,' so I spend my own time opening up software, kernels, and networks just to see how they tick. I’m fascinated by automation; if I can script a task to save someone else time, I will. I’m a self-taught explorer who isn't afraid of a steep learning curve—if there’s a problem I don’t know how to fix yet, I’ll stay up as long as it takes to find the answer.",
+    extraTitle: "Latest fascination:",
+    extraBio: "Security. I'm still learning the ropes, but I’m constantly following the latest news and stress-testing my own setups.",
     education: "The Academy",
     
     // St. Olaf
     stOlafTitle: "St. Olaf College",
+    stOlafDegree: "BA in Computer Science & Mathematics",
+    stOlafMinor: "Minor in Statistics & Data Science",
     stOlafPlace: "Northfield, MN | 2022 - 2026",
     tagProb: "Probability & Statistics",
     tagML: "Machine Learning",
@@ -19,7 +23,8 @@ export const content = {
 
     // DIS Denmark
     disTitle: "DIS Denmark",
-    disPlace: "Copenhagen | Study Abroad",
+    disDegree: "Artificial Neural Network & Deep Learning",
+    disPlace: "Copenhagen | 2025",
     tagDeep: "Deep Learning",
     tagBigData: "Big Data Infra",
     tagAI: "Artificial Intelligence",
@@ -52,6 +57,8 @@ export const content = {
     tagDoc: "Technical Documentation",
     tagAlg: "Algorithmic Logic",
     tagDebug: "System Debugging",
+    tagCost: "Costumer Assistance",
+    tagWorkf: "Workflow Management",
 
     activeQuests: "Active Quests",
     // Stardew Quest
@@ -124,13 +131,17 @@ export const content = {
     closeBtn: "Close Analysis",
     viewRepo: "Source Code",
     readMedium: "Read on Medium",
+    readPaper: "Read Analysis",
     // Project 1
-    ganShort: "A DCGAN trained to synthesize urban graffiti styles.",
-    ganFull: "This project explored the equilibrium between Generator and Discriminator...",
+    ganShort: "A collaborative DCGAN project born from an urban data expedition in Berlin and Denmark.",
+    ganFull: "This project was developed abroad in Denmark with three colleagues, inspired by a visit to Berlin. After visiting startups and state-funded labs that used data to solve urban questions, we were struck by the 'data footprint' of the city itself—specifically its street art. We wanted to see if we could treat graffiti not just as art, but as a complex system of spatial data. Using a DCGAN (Generative Adversarial Network), we built a model to synthesize urban typography like 'Wildstyle' and 'Bubble.' Beyond the technical challenge of balancing the Generator and Discriminator to avoid 'Mode Collapse,' the project was an exploration of how neural networks can interpret the creative 'chaos' of a city's visual language. It was our way of answering an urban question: can an algorithm learn the soul of a mural?",
     // Project 2
-    batoceraShort: "Migrating 20+ workstations from Debian to Batocera.",
-    batoceraFull: "This infrastructure project involved automated deployment scripts...",
+    batoceraShort: "Repurposing legacy hardware through Linux kernel and network optimization.",
+    batoceraFull: "This project started as a solution to a security and performance bottleneck: legacy Windows 10 machines on campus were struggling with hardware limitations. I took two of these machines, wiped them, and installed Debian to build custom arcade stations. This led me down a rabbit hole of Linux tinkering—from fighting with outdated Wi-Fi chips that weren't compatible with modern signals (solving it through manual package injections and kernel tweaks) to bypassing restrictive campus firewalls to get the systems online. I also brought this home to my own Raspberry Pi, where I’ve been optimizing Batocera. For me, it’s about the satisfaction of understanding how the hardware actually talks to the software, and finding a workaround when the standard solutions don't work.",
 
+    goodreadsShort: "A collaborative Big Data project transforming 16,000+ human reviews into structured network insights.",
+    goodreadsFull: "Developed with a colleague for a Big Data course, this project was born from our shared interest in books and a question: does the emotional tone of a review actually match its star rating? After finding existing Kaggle datasets were too small or full of missing values, we built a custom Python scraper to collect metadata and 16,000+ reviews for 4,000 titles. We processed the text using VADER sentiment analysis and found that numerical ratings often fail to capture the full nuance of user sentiment. Additionally, we modeled the data as a complex network using the Louvain algorithm, discovering that genres like 'Politics' and 'Children’s' act as essential bridges between different literary communities. The work involved intensive data cleaning and ANOVA testing, but the most interesting part was seeing how subjective human sentiments in comments are transformed into structured data and clear numerical results.",
+    
     navHome: "Home",
     navQuests: "Quests",
     navSkills: "Skills",
@@ -148,16 +159,15 @@ export const content = {
     heroTitle: "Paloma Guth Kronbauer",
     heroSub: "Ciência da Computação e Matemática @ St. Olaf College",
     about: "Arquivo",
-    bio: "Engenheira de Dados e Desenvolvedora Backend especializada em ambientes Linux, automação em Python e otimização de sistemas para escalabilidade e segurança.",
+    bio: "Curiosa por natureza. Dediquei meu tempo na faculdade à teoria de Matemática e Ciência da Cpmputação porque acredito que é preciso entender como um sistema funciona antes de o abrir. Sempre fui obcecado pelo 'como', então passo meu tempo livre abrindo softwares, kernels e redes só para ver como funcionam. Sou fascinada por automação; se eu puder criar um script para economizar o tempo de alguém, farei. Sou uma exploradora autodidata que não tem medo do tempo e dificuldade de aprendizado; se houver um problema que eu ainda não saiba resolver, ficarei acordada o tempo que for preciso para encontrar a resposta.",
+    extraTitle: "Última fascinação:",
+    extraBio: "Segurança. Ainda estou aprendendo, mas acompanho as notícias e testo minhas próprias configurações constantemente.",
     education: "Academia",
-    edu1Title: "Bacharelado em Ciência da Computação e Matemática",
-    edu1Place: "St. Olaf College | 2022 - 2026",
-    edu2Title: "Redes Neurais e Deep Learning",
-    edu2Place: "DIS Denmark | 2025",
-    eduIB: "Diploma de Bacharelado Internacional (IB)",
 
     // St. Olaf
     stOlafTitle: "St. Olaf College",
+    stOlafDegree: "Bacharelado em Ciência da Computação e Matemática",
+    stOlafMinor: "Ênfase em Estatística e Ciência de Dados",
     stOlafPlace: "Northfield, MN | 2022 - 2026",
     tagProb: "Probabilidade e Estatística",
     tagML: "Machine Learning",
@@ -168,7 +178,8 @@ export const content = {
 
     // DIS Denmark
     disTitle: "DIS Denmark",
-    disPlace: "Copenhague | Intercâmbio",
+    disDegree: "Redes Neurais Artificiais e Deep Learning",
+    disPlace: "Copenhague | 2025",
     tagDeep: "Deep Learning",
     tagBigData: "Infra de Big Data",
     tagAI: "Inteligência Artificial",
@@ -201,6 +212,8 @@ export const content = {
     tagDoc: "Documentação Técnica",
     tagAlg: "Lógica Algorítmica",
     tagDebug: "Depuração de Sistemas",
+    tagCost: "Atendimento ao Cliente",
+    tagWorkf: "Gestão de Fluxo",
 
     activeQuests: "Missões Ativas",
     // Stardew Quest
@@ -216,23 +229,23 @@ export const content = {
 
     inventory: "Inventário e Conquistas",
     lvl: "Nível",
-    skills: "Habilidades Preparadas",
+    skills: "Habilidades",
     attributesTitle: "Atributos Principais",
     attr1: "Arquitetura de Sistemas (INT)",
     attr2: "Documentação (CHA)",
     attr3: "Escalabilidade (DEX)",
-    attr4: "Segurança e Resiliência (WIS)",
+    attr4: "Segurança (WIS)",
     spellBookBtn: "Grimório Completo",
     tongues: "Idiomas Conhecidos",
   
     lvlGroupTitle: "Magias de Nível {n}",
 
-    spellbookTitle: "O Grimório da Paladina",
-    levelDisclaimer: "Níveis representam proficiência atual e pesquisas em andamento.",
+    spellbookTitle: "Grimório",
+    levelDisclaimer: "Níveis representam proficiência atual e estudos em andamento.",
     cantripTitle: "Cantrips Essenciais (Soft Skills)",
     flavorQuote: "O conhecimento é o escudo; a lógica é a espada.",
     flavorAuthor: "Decreto Antigo de Dados",
-    lvlMastery: "Domínios de Nível {n}",
+    lvlMastery: "Habilidades de Nível {n}",
     futureQuest: "Missão Futura...",
 
     cantrips: ["Comunicação Técnica", "Resolução de Problemas", "Pensamento Sistêmico", "Adaptabilidade"],
@@ -252,7 +265,7 @@ export const content = {
         { name: "Git/GitHub", lvl: 6 },
         { name: "SQL & Databases", lvl: 6 },
         { name: "C++ / C", lvl: 7 },
-        { name: "Python (Backend/Data)", lvl: 7 },
+        { name: "Python", lvl: 7 },
         { name: "Numpy & Pandas", lvl: 7 },
         { name: "Distributed Systems", lvl: 8 },
         { name: "Data Privacy & LGPD", lvl: 8 },
@@ -271,14 +284,18 @@ export const content = {
     analysisBtn: "Ler Análise Completa",
     closeBtn: "Fechar Análise",
     viewRepo: "Código Fonte",
+    readPaper: "Ler Análise",
     readMedium: "Ler no Medium",
     // Project 1
-    ganShort: "Uma DCGAN treinada para sintetizar estilos de graffiti urbano.",
-    ganFull: "Este projeto explorou o equilíbrio entre Gerador e Discriminador...",
+    ganShort: "Um projeto colaborativo de DCGAN nascido de uma expedição de dados urbanos em Berlim e Dinamarca.",
+    ganFull: "Este projeto foi desenvolvido durante um intercâmbio na Dinamarca com três colegas, inspirado por uma visita a Berlim. Após visitarmos startups e laboratórios estatais que utilizavam análise de dados para resolver questões urbanas, ficamos fascinados pela 'pegada de dados' da própria cidade, especificamente sua arte de rua. Queríamos testar se poderíamos tratar o graffiti não apenas como arte, mas como um sistema complexo de dados espaciais. Utilizando uma DCGAN (Rede Adversária Generativa), construímos um modelo para sintetizar tipografias urbanas como 'Wildstyle' e 'Bubble'. Além do desafio técnico de equilibrar o Gerador e o Discriminador para evitar o 'Mode Collapse', o projeto foi uma exploração de como as redes neurais podem interpretar o 'caos' criativo da linguagem visual de uma metrópole. Foi a nossa forma de responder a uma pergunta urbana: pode um algoritmo aprender a alma de um mural?",
     // Project 2
-    batoceraShort: "Migração de 20+ estações de Debian para Batocera.",
-    batoceraFull: "Este projeto de infraestrutura envolveu scripts de automação...",
+    batoceraShort: "Recuperação de hardware legado através de otimização de kernel Linux e redes.",
+    batoceraFull: "Este projeto surgiu como uma solução prática para um gargalo de segurança e desempenho: máquinas antigas com Windows 10 no campus estavam no limite de seu hardware. Recuperei duas dessas estações, migrando-as para Debian para criar arcades personalizados. Isso me levou a querer aprender mais sobre o ecossistema Linux, desde solucionar problemas com chips Wi-Fi obsoletos (resolvido via injeção manual de pacotes e ajustes de kernel) até lidar com as restrições de firewall do campus. Trouxe esse aprendizado para o meu próprio Raspberry Pi com Batocera, onde sigo otimizando o sistema. Para mim, o mais interessante é entender como o hardware se comunica com o software, buscando alternativas quando as soluções convencionais não atendem.",
 
+    goodreadsShort: "Projeto colaborativo de Big Data transformando mais de 16.000 resenhas humanas em insights de redes estruturadas.",
+    goodreadsFull: "Desenvolvido com um colega para uma disciplina de Big Data, este projeto nasceu do nosso interesse comum por livros e de uma pergunta: o tom emocional de uma resenha realmente condiz com sua nota? Ao percebermos que os datasets do Kaggle eram limitados ou cheios de valores ausentes, construímos um scraper em Python para coletar metadados e mais de 16.000 avaliações de 4.000 títulos. Processamos o texto via análise de sentimento VADER e descobrimos que as notas numéricas muitas vezes não captam a nuance do sentimento do usuário. Além disso, modelamos os dados como uma rede complexa usando o algoritmo Louvain, identificando que gêneros como 'Política' e 'Infantil' atuam como pontes essenciais entre diferentes comunidades literárias. O trabalho envolveu limpeza pesada de dados e testes ANOVA, mas o ponto mais interessante foi observar como sentimentos humanos subjetivos expressos em comentários são transformados em dados estruturados e resultados numéricos.",
+    
     navHome: "Início",
     navQuests: "Missões",
     navSkills: "Habilidades",

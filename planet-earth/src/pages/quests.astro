@@ -5,47 +5,78 @@ import '../styles/questsArchive.css';
 import { content } from '../components/languages';
 
 const t = content.EN;
+// We create an array of project keys to loop through them
+const projects = [
+  { id: 'gan', repo: 'https://github.com/paloma-guth/projetoGAN-DIS-Denmark', medium: 'https://medium.com/@mhollis_2953/graffiti-generator-d832258e1a2c' },
+  { id: 'batocera', img: '/images/arcade-setup.jpg' },
+  { id: 'goodreads', repo: 'https://github.com/paloma-guth/GoodreadsAnalysis-BigData', paper: 'https://drive.google.com/file/d/1KPhJhRNQXZiqeBQa5jw_U72Oi2T2bn34/view', img: '../books-netwrokAnalysis.png' }
+];
 ---
-
 <Layout title="Quest Log | Paloma">
   <Header />
   <main class="quest-archive">
     <a href="/" class="back-link" data-key="back">{t.back}</a>
     <h1 class="page-title" data-key="questTitle">{t.questTitle}</h1>
 
-    <article class="quest-entry">
-      <div class="entry-header">
-        <h2>Graffiti Generator (GANs)</h2>
-        <span class="badge completed" data-key="statusCompleted">{t.statusCompleted}</span>
-      </div>
-
-      <p class="short-explanation" data-key="ganShort">{t.ganShort}</p>
-
-      <button class="expand-btn">
-        <span class="btn-text" data-key="analysisBtn">{t.analysisBtn}</span>
-        <i class="fa-solid fa-plus"></i>
-      </button>
-
-      <div class="full-lore">
-        <div class="lore-content" data-key="ganFull">{t.ganFull}</div>
-        
-        <div class="quest-resources">
-          <a href="https://github.com/..." target="_blank" class="resource-link">
-            <i class="fa-brands fa-github"></i>
-            <span data-key="viewRepo">{t.viewRepo}</span>
-          </a>
-          <a href="https://medium.com/..." target="_blank" class="resource-link">
-            <i class="fa-brands fa-medium"></i>
-            <span data-key="readMedium">{t.readMedium}</span>
-          </a>
+    {projects.map((project) => (
+      <article class="quest-entry">
+        <div class="entry-header">
+          <h2>{project.id === 'gan' ? 'Graffiti Generator' : project.id === 'batocera' ? 'Linux Arcade Migration' : 'Goodreads Analysis'}</h2>
+          <span class="badge completed" data-key="statusCompleted">{t.statusCompleted}</span>
         </div>
-      </div>
-    </article>
+
+        <p class="short-explanation" data-key={`${project.id}Short`}>{t[`${project.id}Short`]}</p>
+
+        <button class="expand-btn">
+          <span class="btn-text" data-key="analysisBtn">{t.analysisBtn}</span>
+          <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <div class="full-lore">
+          {/* 1. Technical Figure (Image) - Styled to stay inside the box */}
+          {project.img && (
+            <figure class="project-figure">
+              <img src={project.img} alt="Technical Diagram" class="lore-image" />
+              <figcaption class="figure-caption">Project Evidence: Data Visualization & Results</figcaption>
+            </figure>
+          )}
+
+          {/* 2. Text Lore */}
+          <div class="lore-content" data-key={`${project.id}Full`}>{t[`${project.id}Full`]}</div>
+          
+          {/* 3. Resources (Links) */}
+          {(project.repo || project.medium || project.paper) && (
+            <div class="quest-resources">
+              {project.repo && (
+                <a href={project.repo} target="_blank" class="resource-link">
+                  <i class="fa-brands fa-github"></i>
+                  <span data-key="viewRepo">{t.viewRepo}</span>
+                </a>
+              )}
+
+              {project.medium && (
+                <a href={project.medium} target="_blank" class="resource-link">
+                  <i class="fa-brands fa-medium"></i>
+                  <span data-key="readMedium">{t.readMedium}</span>
+                </a>
+              )}
+
+              {project.paper && (
+                <a href={project.paper} target="_blank" class="resource-link">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span data-key="readPaper">{t.readPaper || "Read Analysis"}</span>
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </article>
+    ))}
   </main>
 </Layout>
 
 <script define:vars={{ content }}>
-  // 1. Expansion Logic
+  // Expansion Logic
   document.querySelectorAll('.expand-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const parent = btn.closest('.quest-entry');
@@ -54,8 +85,6 @@ const t = content.EN;
       const icon = btn.querySelector('i');
       
       const isOpen = lore.classList.toggle('active');
-      
-      // Get current language from local storage or html tag
       const lang = document.documentElement.lang || 'EN';
       
       if (isOpen) {
@@ -68,16 +97,15 @@ const t = content.EN;
     });
   });
 
-  // 2. Universal Language Switcher
+  // Language Switcher Logic
   window.addEventListener('langChange', (e) => {
     const lang = e.detail;
-    document.documentElement.lang = lang; // Update helper
+    document.documentElement.lang = lang; 
     const t = content[lang];
 
     document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
       
-      // Special logic for the button text so it doesn't revert incorrectly
       if (key === 'analysisBtn') {
         const isCurrentlyOpen = el.closest('.quest-entry').querySelector('.full-lore').classList.contains('active');
         el.innerText = isCurrentlyOpen ? t.closeBtn : t.analysisBtn;

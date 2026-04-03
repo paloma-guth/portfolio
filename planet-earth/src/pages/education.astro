@@ -7,6 +7,8 @@ const { t } = Astro.props;
     <div class="timeline-item">
       <div class="time-dot"></div>
       <h3 data-key="stOlafTitle">{t.stOlafTitle}</h3>
+      <p class="degree-text" data-key="stOlafDegree">{t.stOlafDegree}</p>
+      <p class="minor-text" data-key="stOlafMinor">{t.stOlafMinor}</p>
       <p class="meta" data-key="stOlafPlace">{t.stOlafPlace}</p>
       <div class="loot-tags">
         <span class="tag" data-key="tagProb">{t.tagProb}</span>
@@ -23,6 +25,7 @@ const { t } = Astro.props;
     <div class="timeline-item">
       <div class="time-dot"></div>
       <h3 data-key="disTitle">{t.disTitle}</h3>
+      <p class="degree-text" data-key="disDegree">{t.disDegree}</p>
       <p class="meta" data-key="disPlace">{t.disPlace}</p>
       <div class="loot-tags">
         <span class="tag" data-key="tagDeep">{t.tagDeep}</span>
