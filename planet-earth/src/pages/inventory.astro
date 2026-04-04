@@ -2,37 +2,65 @@
 const { t } = Astro.props;
 ---
 <section id="inventory">
-    <h2 data-key="inventory">Inventory & Achievements</h2>
+  <h2 data-key="inventory">{t.inventoryTitle}</h2>
 
-    <div class="badge-grid">
-        <div class="badge-item">
-        <div class="badge-icon">
-            <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <div class="badge-info">
-            <span class="badge-name">Pre-Security</span>
-            <span class="badge-source">TryHackMe</span>
-        </div>
-        </div>
-
-        <div class="badge-item">
-        <div class="badge-icon">
-            <i class="fa-solid fa-scroll"></i>
-        </div>
-        <div class="badge-info">
-            <span class="badge-name">Python for Data</span>
-            <span class="badge-source">Google Cert.</span>
-        </div>
-        </div>
-
-        <div class="badge-item">
-        <div class="badge-icon">
-            <i class="fa-solid fa-terminal"></i>
-        </div>
-        <div class="badge-info">
-            <span class="badge-name">Linux Basics</span>
-            <span class="badge-source">Skill Unlocked</span>
-        </div>
-        </div>
+  <div class="badge-grid">
+    <div class="badge-item has-image" data-cert="/certs/thm-pre-security.png">
+      <div class="badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="badge-info">
+        <span class="badge-name">Pre-Security</span>
+        <span class="badge-source">TryHackMe</span>
+      </div>
     </div>
+
+    <div class="badge-item has-image" data-cert="/certs/mudac-2024.png">
+      <div class="badge-icon"><i class="fa-solid fa-chart-line"></i></div>
+      <div class="badge-info">
+        <span class="badge-name">MUDAC Participant</span>
+        <span class="badge-source">Data Hackathon</span>
+      </div>
+    </div>
+
+    <div class="badge-item" data-cert="">
+      <div class="badge-icon"><i class="fa-solid fa-sitemap"></i></div>
+      <div class="badge-info">
+        <span class="badge-name">OlesHack Organizer</span>
+        <span class="badge-source">St. Olaf College</span>
+      </div>
+    </div>
+  </div>
 </section>
+
+<div id="cert-modal" class="modal">
+  <div class="modal-overlay"></div>
+  <div class="modal-container">
+    <span class="close-modal">&times;</span>
+    <img id="modal-img" src="" alt="Certificate" />
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('cert-modal');
+  const modalImg = document.getElementById('modal-img') as HTMLImageElement;
+  const clickableBadges = document.querySelectorAll('.has-image');
+
+  clickableBadges.forEach(badge => {
+    badge.addEventListener('click', () => {
+      const imgSrc = badge.getAttribute('data-cert');
+      if (imgSrc && modal && modalImg) {
+        modalImg.src = imgSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+      }
+    });
+  });
+
+  // Function to close
+  const closeModal = () => {
+    modal?.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  document.querySelector('.close-modal')?.addEventListener('click', closeModal);
+  document.querySelector('.modal-overlay')?.addEventListener('click', closeModal);
+</script>

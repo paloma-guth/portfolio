@@ -13,8 +13,9 @@ const { t } = Astro.props;
         
         <div class="loot-tags">
           <span class="tag">Python</span>
-          <span class="tag">Scrapy</span>
-          <span class="tag" data-key="tagWrangling">{t.tagWrangling}</span>
+          <span class="tag" data-key="tagScraping">{t.tagScraping}</span>
+          <span class="tag">JSON</span>
+          <span class="tag" data-key="tagCleaning">{t.tagCleaning}</span>
         </div>
       </article>
     </a>
@@ -26,9 +27,10 @@ const { t } = Astro.props;
         <p data-key="sqlDesc">{t.sqlDesc}</p>
         
         <div class="loot-tags">
-          <span class="tag">PostgreSQL</span>
-          <span class="tag" data-key="tagPipe">{t.tagPipe}</span>
-          <span class="tag" data-key="tagSoftware">{t.tagSoftware}</span>
+          <span class="tag" data-key="tagSchema">{t.tagSchema}</span>
+          <span class="tag" data-key="tagRelational">{t.tagRelational}</span>
+          <span class="tag" data-key="tagJoins">{t.tagJoins}</span>
+          <span class="tag" data-key="tagIntegrity">{t.tagIntegrity}</span>
         </div>
       </article>
     </a>

@@ -211,6 +211,38 @@ section h2 {
   border-color: var(--accent);
 }
 
+/*Experience button see more*/
+.hidden-experience {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.hidden-experience.active {
+  max-height: 1000px; /* Adjust based on content size */
+}
+
+.archive-toggle {
+  background: none;
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.archive-toggle:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 /* ==========================================================================
    7. NAVIGATION CONTROLS (Theme/Lang Switchers)
    ========================================================================== */
@@ -245,3 +277,4 @@ input:checked + .slider:before { transform: translateX(26px); background-color: 
 .lang-option.active { background: var(--accent); color: white; opacity: 1; }
 
 .cv-btn { background: var(--secondary); color: var(--text) !important; padding: 6px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.8rem; border: 1px solid var(--border); }
+

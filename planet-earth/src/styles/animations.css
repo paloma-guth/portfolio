@@ -254,4 +254,77 @@
   text-transform: uppercase;
 }
 
+/* Add this to your .badge-item or as a separate class */
+.cert-clickable {
+  cursor: pointer;
+}
 
+/* --- MODAL STYLES --- */
+.modal {
+  display: none; 
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.modal-container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  z-index: 10000;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.modal-container img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Only show pointer if it has an image */
+.badge-item.has-image {
+  cursor: pointer;
+}
+
+/* Optional: add a tiny icon or indicator that it's viewable */
+.badge-item.has-image::after {
+  content: '\f06e'; /* FontAwesome eye icon */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.6rem;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  opacity: 0.3;
+}
+
+.badge-item.has-image:hover::after {
+  opacity: 1;
+  color: var(--accent);
+}

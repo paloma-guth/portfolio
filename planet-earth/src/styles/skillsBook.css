@@ -4,13 +4,30 @@
   padding: 0 2rem;
 }
 
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem; /* Increased from default */
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+
 /* INTRO ROW (Cantrips & Quote) */
 .intro-row {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 6rem;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .section-label {
@@ -44,18 +61,36 @@
   color: var(--accent);
   font-weight: 500;
 }
-
 .flavor-text {
-  padding-left: 2rem;
+  /* This controls the gap between the line and the text */
+  padding-left: 1.5rem; 
   border-left: 3px solid var(--accent);
+  /* Ensures the container itself sits clean in the grid */
+  margin-left: 0; 
 }
 
 blockquote {
   font-family: 'Cinzel', serif;
   font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4;
   color: var(--text);
-  line-height: 1.3;
-  margin: 0 0 1rem 0;
+  /* CRITICAL: Browsers add default horizontal margins to blockquotes. 
+     Setting this to 0 aligns it perfectly with your side line. */
+  margin: 0 0 1rem 0; 
+  font-style: normal;
+}
+
+cite {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  display: block;
+  /* Keeps the author aligned with the quote text */
+  margin-top: 0.5rem; 
 }
 
 /* SKILLS GRID (3 Columns) */
@@ -84,6 +119,26 @@ blockquote {
 .skill-card.lvl-group.locked:hover {
   opacity: 0.7;
   filter: grayscale(0.2);
+}
+
+/* Targets the "Spellbook" Title */
+.skills-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem; /* Space between title and disclaimer */
+}
+
+/* Targets the Disclaimer text */
+.skills-header .disclaimer {
+    font-size: 1rem;
+    color: var(--secondary);
+    opacity: 0.8;
+    margin-bottom: 2rem; /* This creates the gap you want before the Cantrip card */
+}
+
+/* Optional: Ensure the header itself has breathing room */
+.skills-header {
+    margin-bottom: 2rem;
 }
 
 .lock-icon {
