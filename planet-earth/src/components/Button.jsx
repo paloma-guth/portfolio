@@ -69,7 +69,7 @@ export default function ActionControls() {
       </div>
 
       <a 
-        href={lang === 'EN' ? '/Paloma_Guth_Kronbauer_cv-english.pdf' : '/Paloma_Guth_Kronbauer_cv-portugues.pdf'} 
+        href={`${import.meta.env.BASE_URL}${lang === 'EN' ? 'Paloma_Guth_Kronbauer_cv-english.pdf' : 'Paloma_Guth_Kronbauer_cv-portugues.pdf'}`} 
         download={lang === 'EN' ? 'Paloma_Guth_Kronbauer_cv-english.pdf' : 'Paloma_Guth_Kronbauer_cv-portugues.pdf'} 
         className="cv-btn"
       >
