@@ -1,94 +1,6 @@
-/* --- REFINED WATER GLINT (Small & Slow) --- */
-
-@keyframes water-glint {
-  0% {
-    /* Starts just behind the tip */
-    transform: translateX(-15px) skewX(-15deg);
-    opacity: 0;
-  }
-  40% {
-    /* Gently fades in as it hits the edge */
-    opacity: 0.5;
-  }
-  60% {
-    opacity: 0.5;
-  }
-  100% {
-    /* Ends just slightly past the tip */
-    transform: translateX(5px) skewX(-15deg);
-    opacity: 0;
-  }
-}
-
-.fill {
-  position: relative;
-  overflow: hidden; 
-  background-color: var(--accent) !important; /* Solid color bar */
-  background-image: none !important; 
-}
-
-/* The Shimmering Glint */
-.fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0; 
-  width: 15px; /* Narrower width for a smaller shimmer */
-  height: 100%;
-  
-  /* A very soft, watery white glint */
-  background: linear-gradient(
-    90deg, 
-    rgba(255, 255, 255, 0) 0%, 
-    rgba(255, 255, 255, 0.3) 50%, 
-    rgba(255, 255, 255, 0) 100%
-  );
-  
-  /* Slower 4s duration for a calmer feel */
-  animation: water-glint 4s infinite ease-in-out;
-  pointer-events: none;
-}
-
-/* --- QUEST LORE & LOOT STYLES --- */
-
-.quest-details {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  opacity: 0.8;
-  border-left: 1px dashed var(--accent);
-  padding-left: 15px;
-  color: var(--text);
-}
-
-.loot-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.tag {
-  background: rgba(221, 161, 94, 0.1); /* Transparent version of Sunlit Clay */
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  padding: 2px 10px;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Optional: Only show tags on hover for a cleaner look */
-.timeline-item .loot-tags {
-  transition: opacity 0.3s ease;
-  opacity: 0.6;
-}
-
-.timeline-item:hover .loot-tags {
-  opacity: 1;
-}
+/* ==========================================================================
+   1. QUESTS & MISSIONS (Timeline & Projects)
+   ========================================================================== */
 
 /* --- QUEST LIST CONTAINER --- */
 .quest-list {
@@ -155,6 +67,46 @@
   display: block;
 }
 
+/* --- QUEST LORE & LOOT STYLES --- */
+.quest-details {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  border-left: 1px dashed var(--accent);
+  padding-left: 15px;
+  color: var(--text);
+}
+
+.loot-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  background: rgba(221, 161, 94, 0.1); /* Transparent version of Sunlit Clay */
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Optional: Only show tags on hover for a cleaner look */
+.timeline-item .loot-tags {
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.timeline-item:hover .loot-tags {
+  opacity: 1;
+}
+
 /* --- LEFT-ALIGNED OUTLINED BUTTON --- */
 .quest-footer {
   display: flex;
@@ -186,23 +138,9 @@
   transform: translateY(-1.5px);
 }
 
-/* --- THE ACCENT BLINKING DOT --- */
-.pulse-indicator {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--accent);
-  border-radius: 50%;
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 161, 94, 0.7); }
-  70% { transform: scale(1.3); box-shadow: 0 0 0 10px rgba(221, 161, 94, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 161, 94, 0); }
-}
+/* ==========================================================================
+   2. INVENTORY & BADGES (Certificates & Skills)
+   ========================================================================== */
 
 /* --- INVENTORY BADGE GRID --- */
 .badge-grid {
@@ -254,9 +192,51 @@
   text-transform: uppercase;
 }
 
-/* Add this to your .badge-item or as a separate class */
+/* Interactive States */
 .cert-clickable {
   cursor: pointer;
+}
+
+.badge-item.has-image {
+  cursor: pointer;
+}
+
+.badge-item.has-image::after {
+  content: '\f06e'; /* FontAwesome eye icon */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.6rem;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  opacity: 0.3;
+}
+
+.badge-item.has-image:hover::after {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   3. UI EFFECTS & MODALS (Interactive Components)
+   ========================================================================== */
+
+/* --- THE ACCENT BLINKING DOT --- */
+.pulse-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 161, 94, 0.7); }
+  70% { transform: scale(1.3); box-shadow: 0 0 0 10px rgba(221, 161, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 161, 94, 0); }
 }
 
 /* --- MODAL STYLES --- */
@@ -305,26 +285,4 @@
   color: white;
   font-size: 2rem;
   cursor: pointer;
-}
-
-/* Only show pointer if it has an image */
-.badge-item.has-image {
-  cursor: pointer;
-}
-
-/* Optional: add a tiny icon or indicator that it's viewable */
-.badge-item.has-image::after {
-  content: '\f06e'; /* FontAwesome eye icon */
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  font-size: 0.6rem;
-  position: absolute;
-  top: 5px;
-  right: 8px;
-  opacity: 0.3;
-}
-
-.badge-item.has-image:hover::after {
-  opacity: 1;
-  color: var(--accent);
 }
