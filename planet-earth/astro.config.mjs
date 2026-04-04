@@ -8,5 +8,5 @@ export default defineConfig({
   
   // 2. Add your Deployment Info
   site: 'https://paloma-guth.github.io',
-  base: '/portfolio', 
+  // base: '/portfolio', 
 });
