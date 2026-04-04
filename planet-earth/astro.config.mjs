@@ -6,4 +6,5 @@ export default defineConfig({
   integrations: [react()],
   site: 'https://paloma-guth.github.io/portfolio',
   base: '/portfolio',
+  trailingSlash: 'always',
 });
