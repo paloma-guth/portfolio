@@ -73,7 +73,12 @@ export default function ActionControls() {
         download={lang === 'EN' ? 'Paloma_Guth_Kronbauer_cv-english.pdf' : 'Paloma_Guth_Kronbauer_cv-portugues.pdf'} 
         className="cv-btn"
       >
-        CV
+        CV 
+        <img 
+          src={lang === 'EN' ? '/flags/us.svg' : '/flags/br.svg'} 
+          alt="" 
+          style={{ width: '18px', marginLeft: '8px', verticalAlign: 'middle' }} 
+        />
       </a>    
     </div>
   );
