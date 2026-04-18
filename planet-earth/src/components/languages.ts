@@ -4,7 +4,7 @@ export const content = {
     heroTitle: "Paloma Guth Kronbauer",
     heroSub: "Computer Science & Mathematics @ St. Olaf College",
     about: "The Archive",
-    bio: "A tinkerer at heart. I spent my time at college diving deep into Math and CS theory because I believe you have to understand how a system works before you can truly master it. I’ve always been obsessed with the 'how,' so I spend my own time opening up software, kernels, and networks just to see how they tick. I’m fascinated by automation; if I can script a task to save someone else time, I will. I’m a self-taught explorer who isn't afraid of a steep learning curve—if there’s a problem I don’t know how to fix yet, I’ll stay up as long as it takes to find the answer.",
+    bio: "A tinkerer at heart. I spent my time at college diving deep into Math and CS theory because I believe you have to understand how a system works before you can truly master it. I’ve always been obsessed with the 'how,' so I spend my own time opening up software, kernels, and networks just to see how they tick. I’m fascinated by automation; if I can script a task to save someone else time, I will. I’m a self-taught explorer who isn't afraid of a steep learning curve, if there’s a problem I don’t know how to fix yet, I’ll stay up as long as it takes to find the answer.",
     extraTitle: "Latest fascination:",
     extraBio: "Cybersecurity. I'm still learning the ropes, but I’m constantly following the latest news and stress-testing my own setups.",
     education: "The Academy",
@@ -134,7 +134,7 @@ export const content = {
         { name: "NoSQL (MongoDB)", lvl: 2 },
         { name: "CI/CD Basics", lvl: 3 },
         { name: "Apache Airflow", lvl: 1 },
-        { name: "R", lvl: 8 }
+        { name: "R", lvl: 7 }
     ],
 
     back: "← Return to Town",
@@ -172,7 +172,7 @@ export const content = {
     heroTitle: "Paloma Guth Kronbauer",
     heroSub: "Ciência da Computação e Matemática @ St. Olaf College",
     about: "Arquivo",
-    bio: "Curiosa por natureza. No tempo que passei na faculdade, foquei mais na teoria do que na aplicação o que me deu a base necessária para entender como os sistemas funcionam antes de sair abrindo e tentando mudar as coisas. Eu sempre quis entender o como, então a Ciência da Computação acabou sendo o ambiente perfeito para mim. Estou sempre tentando mexer em algo e, se eu ainda não sei como funciona, bem... eu vou descobrir. Sou fascinada por automação. Se eu puder criar um script para economizar o tempo de alguém, eu farei (mesmo que eu passe um tempo desproporcional desenvolvendo o script comparado ao tamanho da tarefa original). Sou uma exploradora autodidata que não tem medo da curva de aprendizado. Se houver um problema que eu ainda não saiba resolver, ficarei acordada o tempo que for preciso até encontrar a resposta.",
+    bio: "Curiosa por natureza. Meu tempo na faculdade me proporcionou a base necessária para entender como os sistemas funcionam antes de sair abrindo e tentando mudar as coisas. Eu sempre quis entender o como, então a Ciência da Computação acabou sendo o ambiente perfeito para mim. Estou sempre tentando mexer em algo e, se eu ainda não sei como funciona, bem... eu vou descobrir. Sou fascinada por automação. Se eu puder criar um script para automatizar algo, eu farei (mesmo que eu passe um tempo desproporcional desenvolvendo o script comparado ao tamanho da tarefa original). Sou uma exploradora autodidata que não tem medo da curva de aprendizado. Se houver um problema que eu ainda não saiba resolver, ficarei acordada o tempo que for preciso até encontrar a resposta.",
     extraTitle: "Interesses:",
     extraBio: "Cybersegurança. Apenas uma entusiasta no momento esei que tenho muito a aprender, mas sempre que posso passo um tempo estudando os pontos fracos de sistemas e me divirto no TryHackMe.",
     education: "Academia",
@@ -239,7 +239,7 @@ export const content = {
     tagCleaning: "Limpeza de Dados",
     // SQL Quest
     sqlTitle: "Sistema de Gestão de Guildas (SQL)",
-    sqlDesc: "Projeto ainda nos primórdios, desenvolvido do zero com dados inspirados em Dungeons & Dragons. O objetivo principal é a prática de modelagem de dados, com foco no design do esquema (schema). Estou estruturando relacionamentos muitos-para-muitos entre personagens e habilidades através de tabelas intermediárias e implementando joins para o rastreamento de participação em missões.",
+    sqlDesc: "Projeto ainda nos primórdios, desenvolvido do zero com dados inspirados em Dungeons & Dragons. Objetivo do projeto é estruturar relacionamentos muitos-para-muitos entre personagens e habilidades através de tabelas intermediárias e implementando joins para o rastreamento de participação em missões.",
     tagRelational: "Mapeamento Relacional",
     tagJoins: "Joins Complexos",
     tagIntegrity: "Integridade de Dados",
@@ -300,7 +300,7 @@ export const content = {
       { name: "NoSQL (MongoDB)", lvl: 2 },
       { name: "CI/CD (Fundamentos)", lvl: 3 },
       { name: "Apache Airflow", lvl: 1 },
-      { name: "R", lvl: 8 }
+      { name: "R", lvl: 7 }
     ],
 
     back: "← Voltar para a Vila",
