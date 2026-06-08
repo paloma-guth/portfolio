@@ -94,9 +94,9 @@ export const content = {
     lvlGroupTitle: "Level {n} Spells",
     spellBookBtn: "Full Spellbook",
     tongues: "Known Tongues",
-    pythonBonus: "Bonus: +3 | Scripting & Data Pipelines",
-    sqlBonus: "Bonus: +2 | Modeling & Complex Queries",
-    cBonus: "Bonus: +2 | Pointers, OOP & Memory Allocation",
+    pythonBonus: "Bonus: +3 | Data Pipelines",
+    sqlBonus: "Bonus: +2 | Modeling",
+    cBonus: "Bonus: +2 | OOP & Memory Allocation",
 
     spellbookTitle: "Spellbook",
     levelDisclaimer: "A record of the skills I’ve acquired. Level 10 isn't the end; it's just where the air gets thin.",
@@ -266,9 +266,9 @@ export const content = {
     attr4: "Segurança (WIS)",
     spellBookBtn: "Grimório Completo",
     tongues: "Idiomas Conhecidos",
-    pythonBonus: "Bônus: +3 | Scripting & Pipelines de Dados",
-    sqlBonus: "Bônus: +2 | Modelagem & Queries Complexas",
-    cBonus: "Bônus: +2 | Ponteiros, POO & Alocação de Memória",
+    pythonBonus: "Bônus: +3 | Pipelines de Dados",
+    sqlBonus: "Bônus: +2 | Modelagem",
+    cBonus: "Bônus: +2 | POO & Alocação de Memória",
   
     lvlGroupTitle: "Magias de Nível {n}",
 

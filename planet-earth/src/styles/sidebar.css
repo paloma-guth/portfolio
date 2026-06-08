@@ -73,10 +73,10 @@
 }
 
 .skill-bonus {
-  margin: 0.15rem 0 0.65rem;
+  margin: 0.08rem 0 0.35rem;
   text-align: left;
-  font-size: 0.7rem;
-  opacity: 0.75;
+  font-size: 0.4rem;
+  opacity: 0.7;
 }
 
 .orb {
