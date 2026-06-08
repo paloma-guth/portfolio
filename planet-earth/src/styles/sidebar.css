@@ -57,37 +57,23 @@
 /* --- SPELLS & SKILLS (ORB SYSTEM) --- */
 .skill-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;            
-  margin-bottom: 0.8rem;  
-}
-
-.skill-main {
-  display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.6rem;
   font-size: 0.8rem;
-  width: 100%;
+}
+
+.spell-levels {
+  display: flex;
+  gap: 4px;
 }
 
 .skill-bonus {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-size: 0.65rem;
-  font-weight: 300; 
-  letter-spacing: 0.02rem;
-  opacity: 0.65;
-}
-
-.bonus-value {
-  color: var(--accent); 
-  font-weight: bold;
-}
-
-.spell-levels {
-  display: flex;
-  gap: 4px;
+  font-size: 0.65rem;       /* Slightly smaller than the main skill title */
+  opacity: 0.7;            /* Naturally dims the text relative to your theme color */
 }
 
 .orb {
