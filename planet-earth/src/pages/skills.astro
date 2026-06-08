@@ -97,7 +97,7 @@ const sortedLevels = Object.keys(groupedSkills).sort((a, b) => Number(a) - Numbe
       }
     });
 
-    // Update level titles (e.g., "Level 7 Masteries")
+    // Update level titles
     document.querySelectorAll('.lvl-title').forEach(h3 => {
         const lvl = h3.getAttribute('data-lvl');
         const isLocked = h3.getAttribute('data-locked') === 'true';

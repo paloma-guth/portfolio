@@ -29,8 +29,8 @@ const { t = {} } = Astro.props;
       </div>
       <div class="loot-tags">
         <span class="tag" data-key="tagDoc">{t.tagDoc}</span>
-        <span class="tag">Hardware Troubleshooting</span>
-        <span class="tag">Inventory Management</span>
+        <span class="tag">Troubleshooting</span>
+        <span class="tag" data-key="tagEnd">{t.tagEnd}</span>
       </div>
     </div>
 
@@ -43,7 +43,7 @@ const { t = {} } = Astro.props;
           <p data-key="taDesc">{t.taDesc}</p>
         </div>
         <div class="loot-tags">
-          <span class="tag">Logic Gates</span>
+          <span class="tag">C</span>
           <span class="tag">Assembly</span>
           <span class="tag" data-key="tagDebug">{t.tagDebug}</span>
         </div>
@@ -51,7 +51,7 @@ const { t = {} } = Astro.props;
     </div>
 
     <button id="exp-toggle-btn" class="archive-toggle">
-      <span class="toggle-text" data-key="viewMore">{t.viewMore || "View More History"}</span>
+      <span class="toggle-text" data-key="viewMore">{t.viewM}</span>
       <i class="fa-solid fa-chevron-down"></i>
     </button>
   </div>
@@ -60,13 +60,19 @@ const { t = {} } = Astro.props;
 <script>
   const btn = document.getElementById('exp-toggle-btn');
   const container = document.getElementById('extra-experience');
-  
+  const textSpan = btn?.querySelector('.toggle-text');
+  const icon = btn?.querySelector('i');
+
   btn?.addEventListener('click', () => {
-    const isActive = container?.classList.toggle('active');
-    const icon = btn.querySelector('i');
+    if (!container || !textSpan || !icon) return;
+
+    const isActive = container.classList.toggle('active');
+    icon.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
     
-    if (icon) {
-      icon.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+    textSpan.setAttribute('data-key', isActive ? 'viewLess' : 'viewMore');
+    
+    if (typeof runYourLanguageSwitcherFunction === 'function') {
+      runYourLanguageSwitcherFunction();
     }
   });
 </script>

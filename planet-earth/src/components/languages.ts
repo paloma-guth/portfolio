@@ -59,6 +59,9 @@ export const content = {
     tagDebug: "System Debugging",
     tagCost: "Costumer Assistance",
     tagWorkf: "Workflow Management",
+    tagEnd: "Endpoints Security",
+    viewM: "More Adventures",
+    viewL: "View Less",
 
     activeQuests: "Active Quests",
     // Stardew Quest
@@ -91,6 +94,9 @@ export const content = {
     lvlGroupTitle: "Level {n} Spells",
     spellBookBtn: "Full Spellbook",
     tongues: "Known Tongues",
+    pythonBonus: "Bônus: +3 | Scripting & Data Pipelines",
+    sqlBonus: "Bônus: +2 | Modeling & Complex Queries",
+    cBonus: "Bônus: +2 | Pointers, OOP & Memory Allocation",
 
     spellbookTitle: "Spellbook",
     levelDisclaimer: "A record of the skills I’ve acquired. Level 10 isn't the end; it's just where the air gets thin.",
@@ -207,20 +213,20 @@ export const content = {
     tagInter: "Comunicação Intercultural",
 
     experience: "Histórico de Aventuras",
-    // Job 1
+    // Disco
     job1Title: "Gestora e Mentora Técnica",
     job1Place: "St. Olaf College - Tech Hub | 2022 - 2026",
-    job1Desc: "Atuei ao longo de quatro anos evoluindo de estagiária a líder da equipe de suporte de infraestrutura. Coordenei a migração de estações de trabalho acadêmicas para Debian Linux por questões de segurança e otimização. Nesse processo, lidei com restrições severas de hardware legado, o que exigiu modificações em nível de Kernel para compilação manual de drivers de rede. Na área de dados, desenvolvi um script em Python integrado à API do Google Calendar para extrair e analisar os fluxos de ocupação das salas. Também idealizei a arquitetura de um sistema interno de gerenciamento de inventário para substituir fluxos manuais em formulários.",    
-    
-    //Job 2
+    job1Desc: "Evoluí de estagiária a líder da equipe de infraestrutura ao longo de quatro anos. Coordenei a migração de estações acadêmicas para Debian Linux, lidando com hardware legado e resolvendo incompatibilidades de firmware na rede. Na área de dados, desenvolvi um script em Python integrado à API do Google Calendar para analisar a ocupação das salas e idealizei a arquitetura de um sistema interno de inventário para substituir fluxos manuais.",
+
+    //IT
     job2Title: "Especialista em Suporte Técnico",
     job2Place: "St. Olaf College - TI | 2023 - 2024",
-    job2Desc: "Responsável pelo atendimento ao público e resolução de incidentes críticos do ecossistema de TI corporativo. Gerenciei políticas de segurança de endpoints (Windows e macOS), atualizações de sistemas e mitigação de incidentes de phishing. Minha maior escola de comunicação técnica foi prestar suporte remoto e puramente verbal via telefone para usuários com pouca familiaridade digital, traduzindo conceitos complexos de rede e acessos de forma compreensível. E sim, gerenciei mais problemas crônicos de spooler de impressora no Windows do que eu gostaria de admitir.",
-
+    job2Desc: "Trabalhei no atendimento direto à comunidade do campus, resolvendo problemas de rede, acessos e segurança de endpoints (Windows/macOS). Minha maior escola de comunicação foi prestar suporte 100% verbal via telefone, traduzindo conceitos técnicos para usuários que estavam apanhando da tecnologia. E sim, gerenciei mais problemas crônicos de spooler de impressora no Windows do que eu gostaria de admitir.",
+    
     // TA Position 
     taTitle: "Monitora - Engenharia de Hardware",
     taPlace: "St. Olaf College | 2024",
-    taDesc: "Atuei como o ponto de apoio técnico para os estudantes nas disciplinas de arquitetura e baixo nível. Além da correção de avaliações, mantive plantões para auxiliar no entendimento de portas digitais, ponteiros em C e programação Assembly. Auxiliei diretamente na depuração de códigos de baixo nível e na validação de projetos de circuitos lógicos. Depois de tantas revisões de lógica digital, ler binário e hexadecimal tornou-se quase uma segunda língua.",
+    taDesc: "Atuei como ponto de apoio técnico em arquitetura e baixo nível. Mantive plantões para auxiliar no entendimento de portas digitais, ponteiros em C e programação Assembly, ajudando na depuração de códigos e validação de circuitos lógicos. Depois de tantas revisões de lógica digital, ler binário e hexadecimal tornou-se quase uma segunda língua.",
 
     tagETL: "ETL Automatizado",
     tagPipe: "Otimização de Pipeline",
@@ -229,18 +235,21 @@ export const content = {
     tagDebug: "Depuração de Sistemas",
     tagCost: "Comunicação Técnica",
     tagWorkf: "Gestão de Fluxo",
+    tagEnd: "Segurança de Endpoints",
+    viewM: "Mais Aventuras",
+    viewL: "Ver Menos",
 
     activeQuests: "Missões Ativas",
     // Stardew Quest
     stardewTitle: "Pipeline de Dados: Stardew Valley",
-    stardewDesc: "Desenvolvimento de um pipeline focado na otimização econômica do jogo Stardew Valley. Construí um ecossistema de scrapers em Python para extrair dados brutos da Wiki oficial, estruturando o tratamento, normalização e armazenamento das informações em modelos JSON populados via Programação Orientada a Objetos. Atualmente, o projeto foca na modelagem de simulações estatísticas para prever quais estratégias de cultivo geram o maior retorno sobre o investimento (ROI) por estação.",
+    stardewDesc: "Pipeline de dados focado na otimização econômica do Stardew Valley. Desenvolvi scrapers em Python para extrair dados da Wiki oficial, estruturando e normalizando as informações em modelos JSON via POO. O projeto agora foca em simulações estatísticas para prever o maior retorno sobre o investimento (ROI) por estação.",
     tagPython: "Python",
     tagScraping: "Web Scraping",
     tagJSON: "Armazenamento JSON",
     tagCleaning: "Limpeza de Dados",
     // SQL Quest
     sqlTitle: "Sistema de Gestão de Guildas (SQL)",
-    sqlDesc: "Ideação e implementação do zero de um banco de dados relacional complexo inspirado em mecânicas de Dungeons & Dragons. O projeto visa resolver o gerenciamento caótico de inventários e eventos de um mestre de jogo. Estruturei relacionamentos muitos-para-muitos acoplados a tabelas intermediárias e queries otimizadas com múltiplos JOINs para rastreamento de participação em missões. O objetivo final é encapsular essa inteligência de dados em uma API estável.",
+    sqlDesc: "Implementação do zero de um banco de dados relacional complexo para gerenciamento de inventários e eventos de RPG (D&D). Estruturei relacionamentos muitos-para-muitos, tabelas intermediárias e queries otimizadas com múltiplos JOINs, com o objetivo final de encapsular a lógica em uma API estável.",
     tagRelational: "Modelagem Relacional",
     tagJoins: "Queries Otimizadas (JOINs)",
     tagIntegrity: "Integridade de Dados",
@@ -257,6 +266,9 @@ export const content = {
     attr4: "Segurança (WIS)",
     spellBookBtn: "Grimório Completo",
     tongues: "Idiomas Conhecidos",
+    pythonBonus: "Bônus: +3 | Scripting & Pipelines de Dados",
+    sqlBonus: "Bônus: +2 | Modelagem & Queries Complexas",
+    cBonus: "Bônus: +2 | Ponteiros, POO & Alocação de Memória",
   
     lvlGroupTitle: "Magias de Nível {n}",
 
