@@ -71,8 +71,8 @@ const { t = {} } = Astro.props;
     const isOpen = container.classList.toggle('active');
     icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
     
-    // Read the current global HTML language tag
-    const lang = document.documentElement.lang || 'EN';
+    // Read the current selected language from storage or HTML tag
+    const lang = localStorage.getItem('lang') || document.documentElement.lang || 'EN';
     
     // Force the correct key and word string instantly on click
     textSpan.setAttribute('data-key', isOpen ? 'viewL' : 'viewM');

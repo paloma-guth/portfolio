@@ -13,8 +13,9 @@ export default function ActionControls() {
     setIsDark(savedTheme === 'dark');
     setLang(savedLang);
 
-    // Apply the saved theme to the HTML tag immediately
+    // Apply the saved theme and language to the HTML tag immediately
     document.documentElement.setAttribute('data-theme', savedTheme);
+    document.documentElement.setAttribute('lang', savedLang);
     
     // Tell Astro components which language to show
     window.dispatchEvent(new CustomEvent('langChange', { detail: savedLang }));
@@ -36,6 +37,7 @@ export default function ActionControls() {
   const toggleLang = (selectedLang) => {
     setLang(selectedLang);
     localStorage.setItem('lang', selectedLang);
+    document.documentElement.setAttribute('lang', selectedLang);
     
     window.dispatchEvent(new CustomEvent('langChange', { detail: selectedLang }));
   };
