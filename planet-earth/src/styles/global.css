@@ -210,16 +210,15 @@ section h2 {
   transform: translateY(-5px);
   border-color: var(--accent);
 }
-
 /*Experience button see more*/
 .hidden-experience {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hidden-experience.active {
-  max-height: 1000px; /* Adjust based on content size */
+  max-height: 300px; 
 }
 
 .archive-toggle {
@@ -236,6 +235,7 @@ section h2 {
   align-items: center;
   gap: 10px;
   width: fit-content;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .archive-toggle:hover {

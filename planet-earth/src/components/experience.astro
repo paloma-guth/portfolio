@@ -51,11 +51,12 @@ const { t = {} } = Astro.props;
     </div>
 
     <button id="exp-toggle-btn" class="archive-toggle">
-      <span class="toggle-text" data-key="viewMore">{t.viewM}</span>
+      <span class="toggle-text" data-key="viewM">{t.viewM}</span>
       <i class="fa-solid fa-chevron-down"></i>
     </button>
   </div>
 </section>
+
 
 <script>
   const btn = document.getElementById('exp-toggle-btn');
@@ -69,10 +70,6 @@ const { t = {} } = Astro.props;
     const isActive = container.classList.toggle('active');
     icon.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
     
-    textSpan.setAttribute('data-key', isActive ? 'viewLess' : 'viewMore');
-    
-    if (typeof runYourLanguageSwitcherFunction === 'function') {
-      runYourLanguageSwitcherFunction();
-    }
+    textSpan.setAttribute('data-key', isActive ? 'viewL' : 'viewM');
   });
 </script>

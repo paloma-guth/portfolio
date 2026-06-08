@@ -66,13 +66,14 @@
 .spell-levels {
   display: flex;
   gap: 4px;
+  flex-shrink: 0;
 }
 
 .skill-bonus {
   display: flex;
   gap: 6px;
-  align-items: center;
-  font-size: 0.65rem;       /* Slightly smaller than the main skill title */
+  align-items: left;
+  font-size: 0.5rem;       /* Slightly smaller than the main skill title */
   opacity: 0.7;            /* Naturally dims the text relative to your theme color */
 }
 
@@ -83,6 +84,7 @@
   border-radius: 50%;
   background: transparent;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .orb.filled {
