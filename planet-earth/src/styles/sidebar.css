@@ -72,7 +72,8 @@
 }
 
 .skill-bonus {
-  margin: 0.04rem 0 0.35rem;
+  margin: 0 0 0.18rem;
+  padding: 0;
   text-align: left;
   opacity: 0.7;
 }
