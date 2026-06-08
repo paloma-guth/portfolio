@@ -57,12 +57,16 @@
 /* --- SPELLS & SKILLS (ORB SYSTEM) --- */
 .skill-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0;
   font-size: 0.8rem;
   width: 100%;
   gap: 12px;
+}
+
+.skill-name {
+  line-height: 1;
 }
 
 .spell-levels {
