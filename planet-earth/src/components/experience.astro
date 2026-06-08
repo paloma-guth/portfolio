@@ -57,19 +57,37 @@ const { t = {} } = Astro.props;
   </div>
 </section>
 
-
-<script>
+<script define:vars={{ content }}>
   const btn = document.getElementById('exp-toggle-btn');
   const container = document.getElementById('extra-experience');
   const textSpan = btn?.querySelector('.toggle-text');
   const icon = btn?.querySelector('i');
 
+  // 1. Expansion Click Logic
   btn?.addEventListener('click', () => {
     if (!container || !textSpan || !icon) return;
 
-    const isActive = container.classList.toggle('active');
-    icon.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+    const isOpen = container.classList.toggle('active');
+    icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
     
-    textSpan.setAttribute('data-key', isActive ? 'viewL' : 'viewM');
+    // Read the current global HTML language tag
+    const lang = document.documentElement.lang || 'EN';
+    
+    // Force the correct key and word string instantly on click
+    textSpan.setAttribute('data-key', isOpen ? 'viewL' : 'viewM');
+    textSpan.innerText = isOpen ? content[lang].viewL : content[lang].viewM;
+  });
+
+  // 2. Local Language Sync Logic
+  // Listens to your global switcher event and forces this specific button to update
+  window.addEventListener('langChange', (e) => {
+    if (!container || !textSpan) return;
+    
+    const lang = e.detail; // 'EN' or 'PT'
+    const t = content[lang];
+    const isCurrentlyOpen = container.classList.contains('active');
+
+    textSpan.setAttribute('data-key', isCurrentlyOpen ? 'viewL' : 'viewM');
+    textSpan.innerText = isCurrentlyOpen ? t.viewL : t.viewM;
   });
 </script>

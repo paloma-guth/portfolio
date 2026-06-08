@@ -94,9 +94,9 @@ export const content = {
     lvlGroupTitle: "Level {n} Spells",
     spellBookBtn: "Full Spellbook",
     tongues: "Known Tongues",
-    pythonBonus: "Bônus: +3 | Scripting & Data Pipelines",
-    sqlBonus: "Bônus: +2 | Modeling & Complex Queries",
-    cBonus: "Bônus: +2 | Pointers, OOP & Memory Allocation",
+    pythonBonus: "Bonus: +3 | Scripting & Data Pipelines",
+    sqlBonus: "Bonus: +2 | Modeling & Complex Queries",
+    cBonus: "Bonus: +2 | Pointers, OOP & Memory Allocation",
 
     spellbookTitle: "Spellbook",
     levelDisclaimer: "A record of the skills I’ve acquired. Level 10 isn't the end; it's just where the air gets thin.",
