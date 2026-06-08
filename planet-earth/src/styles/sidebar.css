@@ -58,11 +58,11 @@
 .skill-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 0.6rem;
   font-size: 0.8rem;
   width: 100%;
-  gap: 12px;
+  gap: 8px;
 }
 
 .spell-levels {
@@ -73,11 +73,12 @@
 }
 
 .skill-bonus {
-  display: flex;
-  gap: 6px;
-  align-items: flex-start;
-  font-size: 0.3rem;       /* Slightly smaller than the main skill title */
-  opacity: 0.7;            /* Naturally dims the text relative to your theme color */
+  display: block;
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+  text-align: left;
+  font-size: 0.65rem;
+  opacity: 0.7;
 }
 
 .orb {
