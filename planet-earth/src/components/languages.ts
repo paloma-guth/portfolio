@@ -4,9 +4,9 @@ export const content = {
     heroTitle: "Paloma Guth Kronbauer",
     heroSub: "Computer Science & Mathematics @ St. Olaf College",
     about: "The Archive",
-    bio: "A tinkerer at heart. I spent my time at college diving deep into Math and CS theory because I believe you have to understand how a system works before you can truly master it. I’ve always been obsessed with the 'how,' so I spend my own time opening up software, kernels, and networks just to see how they tick. I’m fascinated by automation; if I can script a task to save someone else time, I will. I’m a self-taught explorer who isn't afraid of a steep learning curve, if there’s a problem I don’t know how to fix yet, I’ll stay up as long as it takes to find the answer.",
-    extraTitle: "Latest fascination:",
-    extraBio: "Cybersecurity. I'm still learning the ropes, but I’m constantly following the latest news and stress-testing my own setups.",
+    bio: "Curious by nature, my time in college gave me the foundational mindset to understand how systems work under the hood before jumping in to change them. I've always wanted to know the 'how' behind everything, making Computer Science the perfect environment for me. I’m constantly tinkering with things, and if I don't know how something works yet... well, I’ll figure it out. I am fascinated by automation: if I can build a script to optimize a manual task, I will. As a self-taught explorer who embraces the learning curve, when faced with a complex problem, I won't rest until I find the answer and see the code running exactly the way it should.",
+    extraTitle: "Interests:",
+    extraBio: "Interests: Cybersecurity. I am an enthusiast in the field, spending my free time studying system vulnerabilities and cracking practical challenges on TryHackMe.",
     education: "The Academy",
     
     // St. Olaf
@@ -40,24 +40,24 @@ export const content = {
 
     experience: "Adventure History",
     // Job 1
-    job1Title: "Technical Lead & Mentor ",
+    job1Title: "Team Lead & Technical Mentor ",
     job1Place: "St. Olaf College - Tech Hub | 2022 - 2026",
-    job1Desc: "Lead a student team in resolving hardware and software issues for the department. Along with daily support, I worked on the migration to Debian Linux and used Python to automate our metric collection.",
+    job1Desc: "Evolved from intern to Infrastructure Team Lead over four years. Coordinated the migration of legacy academic stations to Debian Linux, handling hardware constraints and resolving network firmware incompatibilities. On the data side, developed a Python script integrated with the Google Calendar API to analyze room occupancy and architected an internal inventory system to phase out manual forms.",
     // Job 2
     job2Title: "Technical Support Specialist",
     job2Place: "St Olaf College - IT | 2023 - 2024",
-    job2Desc: "Managed support tickets and helped students and staff with hardware and software problems. I also managed the campus hardware inventory and wrote technical documentation so others could solve similar issues later.",
+    job2Desc: "Worked on the front lines supporting the campus community, resolving network, access, and endpoint security issues (Windows/macOS). My greatest school of technical communication was providing 100% verbal remote support over the phone, translating complex network concepts for users struggling with technology. And yes, I managed more chronic Windows printer spooler issues than I would care to admit.",
     // TA Position 
     taTitle: "Teaching Assistant - Hardware Engineering",
     taPlace: "St. Olaf College | Fall 2024",
-    taDesc: "Helped students with logic gates and assembly language. I assisted with debugging their code and lead workshops to explain how the hardware works and how to apply the concepts in practice.",
+    taDesc: "Served as the technical point of contact for students in computer architecture and low-level courses. Held office hours to assist with digital gates, C pointers, and Assembly programming, directly helping with code debugging and logic circuit validation. After so many digital logic reviews, reading binary and hexadecimal became almost a second language.",
     // Tags
     tagETL: "Automated ETL",
     tagPipe: "Pipeline Optimization",
     tagDoc: "Technical Documentation",
     tagAlg: "Algorithmic Logic",
     tagDebug: "System Debugging",
-    tagCost: "Costumer Assistance",
+    tagCost: "Customer Assistance",
     tagWorkf: "Workflow Management",
     tagEnd: "Endpoints Security",
     viewM: "More Adventures",
@@ -66,14 +66,14 @@ export const content = {
     activeQuests: "Active Quests",
     // Stardew Quest
     stardewTitle: "Stardew Valley Data Pipeline",
-    stardewDesc: "Developing a data analysis of crops from the Stardew Valley game. I built a script to scrape data from the Stardew Valley Wiki, cleaned it up, and saved it into JSON files. Currently, I'm working on analyzing the data to identify which crops are actually worth the effort and using probability to predict how they'll perform.",
+    stardewDesc: "A data pipeline focused on economic optimization for Stardew Valley. I developed Python web scrapers to extract data from the official Wiki, structuring and normalizing the information into JSON models using OOP. The project is currently focused on statistical simulations to predict the highest Return on Investment (ROI) per season.",
     tagPython: "Python",
     tagScraping: "Web Scraping",
     tagJSON: "JSON Storage",
     tagCleaning: "Data Cleaning",
     // SQL Quest
-    sqlTitle: "SQL Guild Management System",
-    sqlDesc: "Developing a database from scratch using D&D-inspired data. I’m focusing on schema design, using junction tables for many-to-many relationships (characters and skills) and writing complex joins to track quest participation and resource distribution.",
+    sqlTitle: "RPG Guild Management System (SQL)",
+    sqlDesc: "Building a complex relational database from scratch to manage RPG (D&D) inventories and events. Currently structuring many-to-many relationships, junction tables, and optimized queries with multiple JOINs, with the ultimate goal of encapsulating the logic into a stable API.",
     tagSchema: "Schema Design",
     tagRelational: "Relational Mapping",
     tagJoins: "Complex Joins",
@@ -99,48 +99,70 @@ export const content = {
     cBonus: "Bonus: +2 | OOP & Memory Allocation",
 
     spellbookTitle: "Spellbook",
-    levelDisclaimer: "A record of the skills I’ve acquired. Level 10 isn't the end; it's just where the air gets thin.",
+    levelDisclaimer: "Skills organized by Spell Circles. Unlocked tiers reflect my current proficiency. Circle 10 is not the end; it's just where the air gets thin.",
     cantripTitle: "Core Cantrips (Soft Skills)",
     flavorQuote: "Data is just noise until you find the frequency. Once the logic is anchored and the flow is steady, the rest is just channeling the spark.",
     flavorAuthor: "Unrecorded Field Notes",
-    lvlMastery: "Level {n} Masteries",
-    futureQuest: "Future Quest...",
+    lvlMastery: "Circle {n}",
+    futureQuest: "Future Quest",
     
     // Arrays for the Skills Page
     cantrips: ["Technical Communication", "Problem Solving", "Systemic Thinking", "Adaptability"],
     technicalSkills: [
-        { name: "Javascript", lvl: 1 },
-        { name: "Typescript", lvl: 2 },
-        { name: "Docker Basics", lvl: 2 },
-        { name: "AWS Fundamentals", lvl: 3 },
-        { name: "Azure", lvl: 1 },
-        { name: "Power BI", lvl: 3 },
-        { name: "Kubernetes", lvl: 3 },
-        { name: "Linux", lvl: 4 },
-        { name: "Tensorflow", lvl: 4 },
-        { name: "Scikit-learn", lvl: 5 },
-        { name: "ETL", lvl: 5 },
-        { name: "Bash", lvl: 6 },
-        { name: "Git/GitHub", lvl: 6 },
-        { name: "SQL & Databases", lvl: 6 },
-        { name: "C++ / C", lvl: 7 },
-        { name: "Python (Backend/Data)", lvl: 7 },
-        { name: "Numpy & Pandas", lvl: 7 },
-        { name: "Distributed Systems", lvl: 8 },
-        { name: "Data Privacy & LGPD", lvl: 8 },
-        { name: "Network Security", lvl: 8 },
-        { name: "Cloud Security Arch.", lvl: 9 },
-        { name: "Infrastructure as Code", lvl: 9 },
-        { name: "Threat Intelligence", lvl: 9 },
-        { name: "Secure System Opt.", lvl: 10 },
-        { name: "Vulnerability Research", lvl: 10 },
-        { name: "Data Encryption", lvl: 10 },
-        { name: "REST APIs", lvl: 3 },
-        { name: "Unit Testing (PyTest)", lvl: 2 },
-        { name: "NoSQL (MongoDB)", lvl: 2 },
-        { name: "CI/CD Basics", lvl: 3 },
-        { name: "Apache Airflow", lvl: 1 },
-        { name: "R", lvl: 7 }
+      // 1st Circle
+      { name: "JavaScript", lvl: 1 },
+      { name: "Azure", lvl: 1 },
+      { name: "Apache Airflow", lvl: 1 },
+
+      // 2nd Circle
+      { name: "TypeScript", lvl: 2 },
+      { name: "Docker (Basics)", lvl: 2 }, 
+      { name: "SQLite", lvl: 2 },
+      { name: "PyTest / Unit Tests", lvl: 2 },
+
+      // 3rd Circle
+      { name: "AWS (Fundamentals)", lvl: 3 },
+      { name: "REST APIs", lvl: 3 },
+      { name: "FastAPI / Flask", lvl: 3 },
+      { name: "CI/CD (Fundamentals)", lvl: 3 },
+
+      // 4th Circle
+      { name: "Linux (Debian / Ubuntu)", lvl: 4 },
+      { name: "PostgreSQL / MySQL", lvl: 4 },
+      { name: "TensorFlow / Keras", lvl: 4 }, 
+
+      // 5th Circle
+      { name: "SQL & Relational Modeling", lvl: 5 },
+      { name: "Scikit-learn", lvl: 5 },
+      { name: "PySpark", lvl: 5 }, 
+
+      // 6th Circle
+      { name: "Bash", lvl: 6 },
+      { name: "Git / GitHub", lvl: 6 },
+
+      // 7th Circle (Current Apex)
+      { name: "Python (Backend/Data)", lvl: 7 },
+      { name: "C / C++", lvl: 7 },
+      { name: "NumPy & Pandas", lvl: 7 },
+      { name: "R", lvl: 7 },
+
+      // --- LOCKED MODULES ---
+
+      // 8th Circle (Locked)
+      { name: "Apache Kafka", lvl: 8 }, 
+      { name: "OAuth2 / JWT Security", lvl: 8 }, 
+      { name: "Locust / Gatling", lvl: 8 },
+
+      // 9th Circle (Locked)
+      { name: "Kubernetes", lvl: 9 }, 
+      { name: "Terraform", lvl: 9 }, 
+      { name: "Integration & E2E Testing", lvl: 9 },
+      { name: "OWASP Top 10", lvl: 9 }, 
+
+      // 10th Circle (Locked)
+      { name: "gRPC & Protocol Buffers", lvl: 10 }, 
+      { name: "Cryptography (AES / RSA)", lvl: 10 }, 
+      { name: "Delta Lake / Lakehouses", lvl: 10 } 
     ],
 
     back: "← Return to Town",
@@ -152,14 +174,14 @@ export const content = {
     readMedium: "Read on Medium",
     readPaper: "Read Analysis",
     // Project 1
-    ganShort: "A collaborative DCGAN project born from an urban data expedition in Berlin and Denmark.",
-    ganFull: "This project was developed abroad in Denmark with three colleagues, inspired by a visit to Berlin. After visiting startups and state-funded labs that used data to solve urban questions, we were struck by the 'data footprint' of the city itself—specifically its street art. We wanted to see if we could treat graffiti not just as art, but as a complex system of spatial data. Using a DCGAN (Generative Adversarial Network), we built a model to synthesize urban typography like 'Wildstyle' and 'Bubble.' Beyond the technical challenge of balancing the Generator and Discriminator to avoid 'Mode Collapse,' the project was an exploration of how neural networks can interpret the creative 'chaos' of a city's visual language. It was our way of answering an urban question: can an algorithm learn the soul of a mural?",
+    ganShort: "Deep generative modeling (DCGAN) applied to the synthesis of complex visual data and urban typography.",
+    ganFull: "A co-authored project developed during an exchange program in Denmark, inspired by Berlin's urban tech ecosystem. After analyzing how local labs utilized data to tackle urban challenges, our team tested whether graffiti could be mapped as a complex spatial data system. Using a DCGAN (Deep Convolutional Generative Adversarial Network) architecture, we developed a computational model to synthesize urban typologies like 'Wildstyle' and 'Bubble'. Beyond the technical challenge of balancing the Generator and Discriminator to mitigate Mode Collapse, the project explored the capacity of deep neural networks to interpret the creative chaos of a metropolis's visual language. It was our response to a computational challenge: can an algorithm learn the essence of an artistic expression?",
     // Project 2
-    batoceraShort: "Repurposing legacy hardware through Linux kernel and network optimization.",
-    batoceraFull: "This project started as a solution to a security and performance bottleneck: legacy Windows 10 machines on campus were struggling with hardware limitations. I took two of these machines, wiped them, and installed Debian to build custom arcade stations. This led me down a rabbit hole of Linux tinkering—from fighting with outdated Wi-Fi chips that weren't compatible with modern signals (solving it through manual package injections and kernel tweaks) to bypassing restrictive campus firewalls to get the systems online. I also brought this home to my own Raspberry Pi, where I’ve been optimizing Batocera. For me, it’s about the satisfaction of understanding how the hardware actually talks to the software, and finding a workaround when the standard solutions don't work.",
+    batoceraShort: "On-demand infrastructure provisioning through Linux kernel optimization on resource-constrained hardware.",
+    batoceraFull: "An infrastructure project aimed at resolving a hardware and security bottleneck in the workplace. With the IT team's approval, two resource-constrained Windows 10 stations—originally slated for future conversion into integrated Arcade cabinets—were migrated to Debian Linux. The main technical challenge involved an incompatible integrated Wi-Fi chipset, which was resolved by adapting an external USB interface and provisioning network packages directly within the OS. To validate the viability of embedded systems and perform emulation benchmarks, this Linux and package management experience was extended to a local testing environment using a Raspberry Pi configured with Batocera. Upon graduating and concluding my tenure, the project was handed over to another student who will continue the development of the dedicated cabinets.",
 
-    goodreadsShort: "A collaborative Big Data project transforming 16,000+ human reviews into structured network insights.",
-    goodreadsFull: "Developed with a colleague for a Big Data course, this project was born from our shared interest in books and a question: does the emotional tone of a review actually match its star rating? After finding existing Kaggle datasets were too small or full of missing values, we built a custom Python scraper to collect metadata and 16,000+ reviews for 4,000 titles. We processed the text using VADER sentiment analysis and found that numerical ratings often fail to capture the full nuance of user sentiment. Additionally, we modeled the data as a complex network using the Louvain algorithm, discovering that genres like 'Politics' and 'Children’s' act as essential bridges between different literary communities. The work involved intensive data cleaning and ANOVA testing, but the most interesting part was seeing how subjective human sentiments in comments are transformed into structured data and clear numerical results.",
+    goodreadsShort: "Distributed Big Data pipeline and complex network analysis for large-scale sentiment extraction.",
+    goodreadsFull:"Developed as an academic partnership for a Big Data course in Denmark, this project stemmed from the hypothesis that numerical ratings often conceal the true nuance of a user's textual sentiment. Faced with the limitations and inconsistencies of publicly available Kaggle datasets, a custom Python web scraper was engineered to extract metadata and over 16,000 reviews across 4,000 titles from the Goodreads platform. The natural language processing layer utilized the VADER algorithm for sentiment analysis, uncovering significant divergences between quantitative metrics and the emotional tone of the critiques. Additionally, the data was modeled as complex networks using the Louvain algorithm, identifying influence clusters and demonstrating how the 'Politics' and 'Children' genres operate as structural bridges between literary communities (statistically validated via ANOVA testing). The project demonstrates the viability of transforming highly subjective textual data into structured graphs and quantifiable intelligence.",
     
     navHome: "Home",
     navQuests: "Quests",
@@ -249,7 +271,7 @@ export const content = {
     tagCleaning: "Limpeza de Dados",
     // SQL Quest
     sqlTitle: "Sistema de Gestão de Guildas (SQL)",
-    sqlDesc: "Implementação do zero de um banco de dados relacional complexo para gerenciamento de inventários e eventos de RPG (D&D). Estruturei relacionamentos muitos-para-muitos, tabelas intermediárias e queries otimizadas com múltiplos JOINs, com o objetivo final de encapsular a lógica em uma API estável.",
+    sqlDesc: "Implementação do zero de um banco de dados relacional complexo para gerenciamento de inventários e eventos de RPG (D&D). Em processo de estruturação de relacionamentos muitos-para-muitos, tabelas intermediárias e queries otimizadas com múltiplos JOINs, com o objetivo final de encapsular a lógica em uma API estável.",
     tagRelational: "Modelagem Relacional",
     tagJoins: "Queries Otimizadas (JOINs)",
     tagIntegrity: "Integridade de Dados",
