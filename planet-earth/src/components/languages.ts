@@ -6,12 +6,12 @@ export const content = {
     about: "The Archive",
     bio: "Curious by nature, my time in college gave me the foundational mindset to understand how systems work under the hood before jumping in to change them. I've always wanted to know the 'how' behind everything, making Computer Science the perfect environment for me. I’m constantly tinkering with things, and if I don't know how something works yet... well, I’ll figure it out. I am fascinated by automation: if I can build a script to optimize a manual task, I will. As a self-taught explorer who embraces the learning curve, when faced with a complex problem, I won't rest until I find the answer and see the code running exactly the way it should.",
     extraTitle: "Interests:",
-    extraBio: "Interests: Cybersecurity. I am an enthusiast in the field, spending my free time studying system vulnerabilities and cracking practical challenges on TryHackMe.",
+    extraBio: "Cybersecurity. I am an enthusiast in the field, spending my free time studying system vulnerabilities and cracking practical challenges on TryHackMe.",
     education: "The Academy",
     
     // St. Olaf
     stOlafTitle: "St. Olaf College",
-    stOlafDegree: "BA in Computer Science & Mathematics",
+    stOlafDegree: "BA in Computer Science & Mathematics (Magna Cum Laude)",
     stOlafMinor: "Minor in Statistics & Data Science",
     stOlafPlace: "Northfield, MN | 2022 - 2026",
     tagProb: "Probability & Statistics",
@@ -207,7 +207,7 @@ export const content = {
 
     // St. Olaf
     stOlafTitle: "St. Olaf College",
-    stOlafDegree: "Bacharelado em Ciência da Computação e Matemática",
+    stOlafDegree: "Bacharelado em Ciência da Computação e Matemática (Magna Cum Laude)",
     stOlafMinor: "Ênfase em Estatística e Ciência de Dados",
     stOlafPlace: "Northfield, MN | 2022 - 2026",
     tagProb: "Probabilidade e Estatística",
